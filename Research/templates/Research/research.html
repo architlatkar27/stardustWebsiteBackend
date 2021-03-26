@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>
+    IAC Papers
+</h2>
+{% regroup papers by year as years %}
+
+{% for year in years %}
+<h3>{{ year.grouper }}</h3>
+<ul>
+    {% for paper in year.list %}
+    <li>
+        <p>{{ paper.title }} | {{ paper.author.name }} | {{ paper.conference }}</p><br>
+        <p>{{ paper.abstract }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endfor %}
+
+{% endblock content %}

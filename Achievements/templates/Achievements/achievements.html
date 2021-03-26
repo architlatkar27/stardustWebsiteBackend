@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Our Achievements</h3>
+{% for a in achievements %}
+    <h4>{{ a.title }}</h4>
+    <p>{{ a.date }}</p>
+    <p>{{ a.description }}</p><hr>
+{% endfor %}
+
+{% endblock content %}

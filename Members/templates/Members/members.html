@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+<!--
+    Core Members
+-->
+<h1>The Core Team</h1>
+<!--Maybe we can keep this static-->
+<!--
+    Technical Team
+-->
+<h1>Technical Team</h1>
+{% regroup tech by subsystem as subsystem_list %}
+<ul>
+    {% for subsystem in subsystem_list %}
+    <li><h2>{{ subsystem.grouper }}</h2><br>
+        {% for member in subsystem.list %}
+            {% if member.position == "SSH" %}
+            <p><b>Subsystem Head: {{ member.name }} </b></p>
+            {% endif %}
+        {% endfor %}
+        {% for member in subsystem.list %}
+            {% if member.position == "CSE" %}
+            <p><b>Chief System Engineer: {{ member.name }} </b></p>
+            {% endif %}
+        {% endfor %}
+        <p>System Engineers: </p><br>
+        <ul>
+            {% for member in subsystem.list %}
+                {% if member.position == "SE" %}
+                <li>
+                    {{ member.name }}
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <p>Subsystem Engineers: </p><br>
+        <ul>
+            {% for member in subsystem.list %}
+                {% if member.position == "SSE" %}
+                <li>
+                    {{ member.name }}
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+     </li>   
+</ul>
+<hr><hr>
+<!--
+    Non Technical Team
+-->
+<h1>Non Technical Team</h1>
+{% regroup nontech by team as teams %}
+{% for team in teams %}
+<ul>
+    <li>
+        <h2>{{ team.grouper }}</h2>
+        {% for member in team.list %}
+            <p>{{ member.name }}</p><br>
+        {% endfor %}
+    </li>
+</ul>
+<p>End of List</p>
+{% endfor %}
+{% endfor %}
+{% endblock content %}

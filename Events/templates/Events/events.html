@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Events</h2>
+<h3>Upcoming</h3><hr>
+{% for e in upcoming %}
+    <img src="{{ e.poster.url }}">
+    <h4>{{ e.title }}</h4>
+    {% if e.start_date == e.end_date %}
+        <p>Date: {{ e.start_date }}</p>
+    {% else %}
+        <p>Start Date: {{ e.start_date }}</p>
+        <p>End Date: {{ e.end_date }}</p>
+    {% endif %}
+    <p>{{ e.description }}</p>
+{% endfor %}
+<hr>
+<h3>Ongoing</h3><hr>
+{% for e in ongoing %}
+    <img src="{{ e.poster.url }}">
+    <h4>{{ e.title }}</h4>
+    {% if e.start_date == e.end_date %}
+        <p>Date: {{ e.start_date }}</p>
+    {% else %}
+        <p>Start Date: {{ e.start_date }}</p>
+        <p>End Date: {{ e.end_date }}</p>
+    {% endif %}
+    <p>{{ e.description }}</p>
+{% endfor %}
+<hr>
+<h3>Past</h3>
+{% for e in past %}
+    <img src="{{ e.poster.url }}">
+    <h4>{{ e.title }}</h4><hr>
+    {% if e.start_date == e.end_date %}
+        <p>Date: {{ e.start_date }}</p>
+    {% else %}
+        <p>Start Date: {{ e.start_date }}</p>
+        <p>End Date: {{ e.end_date }}</p>
+    {% endif %}
+    <p>{{ e.description }}</p>
+{% endfor %}
+
+{% endblock content %}
