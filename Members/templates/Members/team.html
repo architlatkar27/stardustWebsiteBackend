@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!--Please try to shorten the founders section. Its too big. Even the core section as a matter of fact-->
+<!--And how many time faculty coordinators XD-->
+<!--Also no mention of other subsystem members and non technical team??
+    Please make section for them, even if just names
+-->
+
+<section id="three" class="wrapper style2">
+    <div class="inner">
+        <header class="align-center">
+        <p class="special">
+            We share immense gratitude with the founding members and faculty Coordinators of STARDUST
+        </p>
+        <h2>The Founders</h2>
+        </header>
+        <div class="gallery">
+            {% for f in founders %}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="image fit flip-card-front">
+                        <a href="#"><img src="{{ f.image.url }}" alt="" /></a>
+                        <h3>{{ f.name }}</h3>
+                        <p>Founder</p>
+                    </div>
+                <div class="image fit flip-card-back">
+                    <h3>{{ f.name }}</h3>
+                    <p>Founder</p>
+                    <ul class="social-icons">
+                        <li><a class="mail" href="{{ f.email }}"><i class="fa fa-envelope"></i></a></li>
+                        <li><a class="linkedin" href="{{ f.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
+                    </ul>
+                </div>
+            </div>
+        </div>
+            {% endfor %}
+    </div>
+    </section>
+
+    <section id="three" class="wrapper style2">
+        <div class="inner">
+            <header class="align-center">
+            <p class="special">
+           </p>
+            <h2>The Core</h2>
+            </header>
+            <div class="gallery">
+                {% for c in core %}
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="image fit flip-card-front">
+                            <img src="{{ c.image.url }}" alt="" />
+                            <h3>{{ c.name }}</h3>
+                            <p>{{ c.post }}</p>
+                        </div>
+                        <div class="image fit flip-card-back">
+                            <h3>{{ c.name }}</h3>
+                            <p>{{ c.post }}</p>
+                            <ul class="social-icons">
+                                <li><a class="mail" href="mailto:{{ c.email }}"><i class="fa fa-envelope"></i></a></li>
+                                <li><a class="linkedin" href="{{ c.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock content %}

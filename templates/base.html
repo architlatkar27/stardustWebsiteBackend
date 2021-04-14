@@ -1,14 +1,133 @@
 {% load static %}
-<html>
-    <head>
-        <title>  </title>
-    </head>
-    <body>
-        <p>
-            Welcome to Stardust. From base.html file.
-        </p>
-        {% block content %}
-        
-        {% endblock content %}
-    </body>
+<!DOCTYPE html>
+
+<html lang="en" style="width: 100vw; overflow-x: hidden">
+  <head>
+    <title>STARDUST</title>
+    <link
+      rel="icon"
+      type="image/png"
+      src="{% static 'images/logo-3.png' %}"
+      href="{% url 'other:home' %}"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- <link rel="stylesheet" href="styles2.css" /> -->
+  </head>
+  <body>
+    
+    <!-- Header -->
+    <header id="header" class="alt">
+      <div class="logo">
+        <a href="#">
+          <img
+            src="{% static 'images/logo-3.png' %}"
+            width="50px"
+            height="50px"
+          />
+        </a>
+      </div>
+      <a href="#menu">Menu</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="menu">
+      <ul class="links">
+        <li><a href="{% url 'other:home' %}">Home</a></li>
+        <li><a href="{% url 'Achievements:achievements' %}">Achievements</a></li>
+        <li><a href="{% url 'Members:team' %}">The Team</a></li>
+        <li><a href="{% url 'other:subsystems' %}">Subsytems</a></li>
+        <li><a href="{% url 'other:contact' %}">Contact us</a></li>
+      </ul>
+    </nav>
+
+
+    {% block content %}
+
+
+    {% endblock content %}
+
+
+      <!-- Site footer -->
+    <footer id="footer" class="site-footer">
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <h6>S.T.A.R.D.U.ST</h6>
+            <p class="text-justify">
+            Satellite Technology And Research Division Under Students
+            <i>S.T.A.R.D.U.ST </i> was founded in 2019 by a group of 3rd year
+            UG students at Ramaiah Institute of Technology with a clear
+            objective of designing and building a 2U Cubesat having a novel
+            payload idea and launching it with the support and guidance of
+            ISRO and college Faculty.
+            </p>
+            <a href="http://msrit.edu/department/ece.html">
+            <img src="{% static "images/logo-dark.png" %}" width="300px" class="dark"
+            /></a>
+            <p><a href="contact.html">Contact Us</a></p>
+            <button id="scrollToTopBtn">🚀</button>
+        </div>
+        </div>
+        <hr />
+    </div>
+    <div class="container">
+        <div>
+        <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">&copy; 2020 Team Stardust.</p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+            <li>
+                <a class="facebook" href="https://www.facebook.com/RitStardust/"
+                ><i class="fa fa-facebook"></i
+                ></a>
+            </li>
+            <li>
+                <a class="twitter" href="https://twitter.com/Rit_Stardust"
+                ><i class="fa fa-twitter"></i
+                ></a>
+            </li>
+            <li>
+                <a
+                class="instagram"
+                href="https://instagram.com/rit_stardust?igshid=czqzqe1yi9bp"
+                ><i class="fa fa-instagram"></i
+                ></a>
+            </li>
+            <li>
+                <a
+                class="linkedin"
+                href="https://www.linkedin.com/company/rit-stardust/"
+                ><i class="fa fa-linkedin"></i
+                ></a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="{% static "assets/js/jquery.min.js" %}"></script>
+    <script src="{% static "assets/js/jquery.scrollex.min.js" %}"></script>
+    <script src="{% static "assets/js/skel.min.js" %}"></script>
+    <script src="{% static "assets/js/util.js" %}"></script>
+    <script src="{% static "assets/js/main.js" %}"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
 </html>

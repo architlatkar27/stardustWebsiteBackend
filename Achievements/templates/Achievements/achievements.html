@@ -1,11 +1,47 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h3>Our Achievements</h3>
-{% for a in achievements %}
-    <h4>{{ a.title }}</h4>
-    <p>{{ a.date }}</p>
-    <p>{{ a.description }}</p><hr>
-{% endfor %}
+<section id="One" class="wrapper style3">
+    <div class="inner">
+      <header class="align-center">
+        <p>Commited to upskill the team</p>
+        <h2>Achievements and notable workshops</h2>
+      </header>
+    </div>
+</section>
+
+<section id="two" class="wrapper style2">
+    <div class="inner">
+      <!--<header class="align-center">
+                          <p class="special">
+                            Nam vel ante sit amet libero scelerisque facilisis eleifend vitae
+                            urna
+                          </p>
+                          <h2>Morbi maximus justo</h2>
+                        </header>-->
+      <div class="gallery">
+        {% for a in achievements %}
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="image fit flip-card-front">
+              <img
+                src="{{ a.photo.url }}"
+                alt=""
+              />
+              <h2>{{ a.title }}</h2>
+              <!--<p>The members gained a first hand experience in building and deploying a mini cansat</p>-->
+            </div>
+            <div class="image fit flip-card-back">
+              <h2>{{ a.title }}</h2>
+              <p>
+                {{ a.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+</section>
 
 {% endblock content %}

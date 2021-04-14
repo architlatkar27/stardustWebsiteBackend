@@ -6,7 +6,7 @@ class ResearchPaper(models.Model):
 
     objects        = models.Manager()
 
-    file           = models.FileField()
+    file           = models.FileField(upload_to="research/")
     title          = models.CharField(max_length=250, null=False, blank=False)
     year           = models.IntegerField(null=False, blank=False)
     author         = models.ForeignKey(Student, on_delete=models.PROTECT, related_name="author")

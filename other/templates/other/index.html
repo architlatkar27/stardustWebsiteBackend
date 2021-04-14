@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<section class="banner full">
+    <article>
+      <img src="{% static 'images/earth.jpg' %}" alt="" />
+      <div class="inner">
+        <header>
+          <p>
+            Satellite Technology And Research Division Under Students
+            <a href="#">S.T.A.R.D.U.ST</a>
+          </p>
+          <h2>S.T.A.R.D.U.ST</h2>
+        </header>
+      </div>
+    </article>
+    <article>
+      <img src="{% static 'images/galaxy.jpg' %}" alt="" />
+      <div class="inner" data-aos="fade-down">
+        <header>
+          <p>Satellite Technology And Research Division Under Students</p>
+          <h2>S.T.A.R.D.U.ST</h2>
+        </header>
+      </div>
+    </article>
+    <article>
+      <img src="{% static 'images/nebula.JPG' %}" alt="" />
+      <div class="inner">
+        <header>
+          <p>Satellite Technology And Research Division Under Students</p>
+          <h2>S.T.A.R.D.U.ST</h2>
+        </header>
+      </div>
+    </article>
+    <article>
+      <img
+        src="https://blogs.nasa.gov/spacestation/wp-content/uploads/sites/240/2016/05/blog_iss047e120451.jpg"
+        alt=""
+      />
+      <div class="inner">
+        <header>
+          <p>Satellite Technology And Research Division Under Students</p>
+          <h2>S.T.A.R.D.U.ST</h2>
+        </header>
+      </div>
+    </article>
+  </section>
+
+  <section id="two" class="wrapper style3">
+    <div id="stars"></div>
+ <div id="stars2"></div>
+ <div id="stars3"></div>
+   <div class="inner" data-aos="zoom-in-right">
+     <header class="align-center">
+       <!-- <p>
+         About US
+       </p> -->
+       <h2>About Us</h2>
+       <hr />
+     </header>
+     <p>
+       Team S.T.A.R.D.U.ST was founded in 2019 under the support and guidance
+       of the Department of Electronics and Communication engineering by a
+       group of 3rd year UG students at Ramaiah Institute of Technology with
+       a clear objective of designing and building a 2U Cubesat having a
+       novel payload idea and launching it with the support and guidance of
+       ISRO and college Faculty. Other objectives of this club include
+       representing the college in space conferences, competitions,
+       symposiums and other national and global events on Space science and
+       technology.
+     </p>
+   </div>
+ </section>
+
+ <section id="three" class="wrapper style2">
+    <div id="stars"></div>
+ <div id="stars2"></div>
+ <div id="stars3"></div>
+   <div class="inner">
+     <!--<header class="align-center">
+       <p class="special">
+         Nam vel ante sit amet libero scelerisque facilisis eleifend vitae
+         urna
+       </p>
+       <h2>Morbi maximus justo</h2>
+     </header>-->
+     <div class="gallery" data-aos="zoom-in-right">
+       <div>
+         <div class="image fit" style="background: linear-gradient(
+         to right bottom,
+       rgba(0, 0, 0, 2),
+       rgba(0, 0, 0, 0.2)
+       );">
+           <h2>Mission</h2>
+           <br>
+           <p>
+             Enhance the skills of undergraduate engineering students by
+             providing hands-on experience for building a small satellite
+           </p>
+         </div>
+       </div>
+       <div>
+         <div class="image fit" style="background: linear-gradient(
+         to right bottom,
+       rgba(0, 0, 0, 0.2),
+       rgba(0, 0, 0, 2)
+         );">
+           <h2>Vision</h2>
+           <p>
+             To successfully design, fabricate and operate an indeginous
+             small satellite with the purpose of providing useful
+             contribution in the field of Space Technology
+           </p>
+         </div>
+       </div>
+     </div>
+     <br /><br /><br />
+
+     <div style="text-align: center" data-aos="fade-up">
+       <img src="{% static 'images/cansat-1.JPG' %}" width="350px" height="315" style="position:relative; z-index: 100;"/>
+       <iframe
+         width="350"
+         height="315"
+         src="https://www.youtube.com/embed/RFXp8EhKVC4"
+         frameborder="0"
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+         allowfullscreen
+         style="position:relative; z-index: 100;border-radius: 12px;"
+       ></iframe>
+       <img src="{% static 'images/MS.JPG' %}" width="350px" height="315" style="position:relative; z-index: 100;"/>
+     </div>
+   </div>
+ </section>
+
+ <section id="three" class="wrapper style2">
+    <div id="stars"></div>
+ <div id="stars2"></div>
+ <div id="stars3"></div>
+   <div class="inner">
+     <header class="align-center">
+       <!-- <p class="special">
+       Nam vel ante sit amet libero scelerisque facilisis eleifend vitae
+       urna
+     </p> -->
+       <h2>Faculty Coordinators</h2>
+     </header>
+     <div class="gallery">
+        {% for f in faculty %}
+       <div>
+         <div class="image fit">
+           <img src="{{ f.image }}" alt="" /></a>
+           <h3>{{ f.name }}</h3>
+           <p>{{ f.position }}</p>
+           <p>
+             <b>Department of<br />{{ f.dept }}</b>
+           </p>
+         </div>
+       </div> 
+       {% endfor %}
+     </div>
+   </div>
+ </section>
+
+ <section id="two" class="wrapper style3">
+    <div id="stars"></div>
+ <div id="stars2"></div>
+ <div id="stars3"></div>
+   <div class="inner" data-aos="zoom-in-right">
+     <header class="align-center">
+       <p>Check out our team brochure!</p>
+       <pre>Click the link below</pre>
+       <h2>
+         <a
+           href="https://drive.google.com/file/d/1_BO8raethvJ9qzwr5CjlkuQF2SrA2Qxw/view?usp=sharing"
+           >Team Brochure</a
+         >
+       </h2>
+     </header>
+   </div>
+ </section>
+ 
+
+{% endblock content %}

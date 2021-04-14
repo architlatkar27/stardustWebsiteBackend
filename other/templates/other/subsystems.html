@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!--Wanna do this dynamic as well?? your choice-->
+
+    <!-- One -->
+    <section id="One" class="wrapper style3">
+      <div class="inner">
+        <header class="align-center">
+          <p>S.T.A.R.D.U.ST comprises of 6 main subsytems</p>
+          <h2>Subsystems</h2>
+        </header>
+      </div>
+    </section>
+    <!-- Two -->
+    <section id="two" class="wrapper style2">
+      <div class="inner">
+        <div class="box">
+          <div class="content">
+            <!-- <header class="align-center">
+							<p>subsytems is what form the main system!</p>
+							<p>S.T.A.R.D.U.ST comprises of 6 main subsytems</p>
+						</header> -->
+            <!--slide in-->
+            <p id="subp">Attitude Determination and Control System</p>
+            <br /><br />
+            <div class="wrap style1">
+              <img id="subimg" src="{% static 'images/ADCS.jpg' %}" alt="adcs" />
+              <p id="slide1">
+                <u>ADCS</u><br />
+                very essential for stabilising the satellite in the orbit and
+                ensuring that it points in the direction it is supposed to
+                point.
+              </p>
+            </div>
+
+            <p id="subp">Electrical and Power System</p>
+            <br /><br />
+            <div class="wrap">
+              <img
+                id="subimg"
+                src="https://64.media.tumblr.com/6a60ff0c07321e1857205773b219a240/f50bb497635039cb-45/s540x810/a3c7d503ecd5cec8f480d85baf58e76f84d06aa5.gif"
+              />
+              <p id="slide2">
+                <u>EPS</u><br />
+                it is used for efficient and reliable power generation,its
+                conversion to differrent power and voltage levels, power storage
+                and proper distribution to various subsystems on-board satellite
+                according to their requirements
+              </p>
+            </div>
+
+            <p id="subp">Ground Control And Communication System</p>
+            <br /><br />
+            <div class="wrap">
+              <img id="subimg" src="{% static 'images/communication.jpg' %}" />
+              <p id="slide1">
+                <u>G&C</u><br />
+                the comunications subsytems which let us know if our satellite
+                is as good as a rock in space. It is responsible for ensuring
+                telecommunication between the satellite and ground station.
+              </p>
+            </div>
+
+            <p id="subp">OnBoard Command and Data Handling System.</p>
+            <br /><br />
+            <div class="wrap">
+              <img id="subimg" src="{% static 'images/odhs.jpg' %}" />
+              <p id="slide2">
+                <u>ODHS</u><br />
+                The Onboard data handling subsytem is essentially the "brain" of
+                the orbitor and controls all spacecraft functions. it carries
+                and stored data between the various electronic units and the
+                ground segment, via the tekemetry, tracking and command(TT&C)
+                susbsytem.
+              </p>
+            </div>
+
+            <p id="subp">PAYLOAD</p>
+            <br /><br />
+            <div class="wrap">
+              <img id="subimg" src="{% static 'images/payload.jpg' %}" />
+              <p id="slide1">
+                <u>PAYLOAD</u><br />
+                It refers to the actual function of the satellite. In other
+                words, its the purpose of the satellite. Most satellite teams
+                have a payload subsytem that works on deciding the purpose and
+                the methodology of achieving this aim.
+              </p>
+            </div>
+
+            <p id="subp">Structures and Thermal System</p>
+            <br /><br />
+            <div class="wrap">
+              <img
+                id="subimg"
+                src="https://directory.eoportal.org/documents/163813/5837501/PICASSO_in_orbit.gif"
+              />
+              <p id="slide2">
+                <u>S&T</u><br />
+                It is responsible for designing and manufacturing the satellite
+                structure while ensuring that the satellite can bear all the
+                structural and the thermal loads. It also maintains the
+                temperature of all spacecraft components within certain limits.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock content %}
