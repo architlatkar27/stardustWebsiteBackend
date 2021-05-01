@@ -4820,8 +4820,17 @@ h2 a:hover {
 }
 
 .panel__head, .panel__list {
-  text-align: center;
+  text-align: center !important;
   overflow-x: hidden;
+}
+
+.head{
+  padding-left: 4rem;
+  font-size: 1.4rem;
+}
+.headname{
+  padding-right: 30rem;
+  padding-top: 1rem;
 }
 
 .panel__wrapper-icon .panel__head {
@@ -4831,10 +4840,40 @@ h2 a:hover {
   color: rgba(255,255,255,.9);
 }
 
+@media (max-width: 768px){
+  .head{
+    padding-left: 2rem;
+    font-size: 1.3rem;
+  }
+  .headname{
+    padding-right: 20rem;
+    padding-top: 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+/*@media (max-width: 700px){
+  .memimg{
+    margin: 3%;
+            position: relative;
+  }
+  .head{
+    position: absolute;
+            bottom: 20px;
+            left: 10px
+  }
+  .headname{
+    position: absolute;
+            bottom: 20px;
+            left: 10px
+  }
+}*/
+
 @media (min-width: 768px){
   .panel__wrapper-icon .panel__head {
     padding: 24px 50px;
   }
+
 }
 
 @media (min-width: 992px){
