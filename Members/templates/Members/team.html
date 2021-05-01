@@ -2,30 +2,65 @@
 {% block content %}
 {% load static %}
 
-<!--Please try to shorten the founders section. Its too big. Even the core section as a matter of fact-->
-<!--And how many time faculty coordinators XD-->
-<!--Also no mention of other subsystem members and non technical team??
-    Please make section for them, even if just names
--->
+<!--Please try to shorten the founders section. Its too big. Even the core section as a matter of fact--><!--done-->
+<!--And how many time faculty coordinators XD--><!--done-->
+<!--Also no mention of other subsystem members and non technical team??--><!--done-->
+  <!--  Please make section for them, even if just names--><!--done-->
+
+  <!-- One -->
+  <section id="One" class="wrapper style3" >
+    <div class="inner">
+        <header class="align-center">
+            <p>One team,One mission</p>
+            <h2>The Team</h2>
+        </header>
+    </div>
+</section>
+
+<!-- Two Dont delete these comments as it can be used further -->
+<!--	<section id="two" class="wrapper style2">
+    <div class="inner">
+        <div class="box">
+            <div class="content">
+                <header class="align-center">
+                    <p>maecenas sapien feugiat ex purus</p>
+                    <h2>Lorem ipsum dolor</h2>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at dignissim augue, in iaculis neque.</p>
+                
+                <p>Vivamus nec odio ac ligula congue feugiat at vitae leo. Aenean sem justo, finibus sed dui eu,</p>>
+
+                <p>Vivamus ultricies mollis mauris quis molestie. Quisque eu mi velit. In et cursus nibh. Donec facilisis, orci sed mollis hendrerit, nunc risus mattis odio, eget efficitur nisl orci a lectus. </p>
+            </div>
+        </div>
+    </div>
+</section>-->
 
 <section id="three" class="wrapper style2">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
     <div class="inner">
         <header class="align-center">
         <p class="special">
             We share immense gratitude with the founding members and faculty Coordinators of STARDUST
         </p>
-        <h2>The Founders</h2>
+        <h2 data-aos="fade-down">The Founders</h2>
         </header>
-        <div class="gallery">
+        <div class="gallery team">
             {% for f in founders %}
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="image fit flip-card-front">
-                        <a href="#"><img src="{{ f.image.url }}" alt="" /></a>
+            <div  data-aos="fade-up">
+                <!--<div class="flip-card-inner">-->
+                    <div class="image fit team">
+                        <a href="#"><img src="{{ f.image.url }}" alt="" /></a><br>
                         <h3>{{ f.name }}</h3>
                         <p>Founder</p>
+                        <ul class="social-icons hide">
+                            <li><a class="mail" href="#"><i class="fa fa-envelope"></i></a></li>
+                            <li><a class="linkedin" href="https://www.linkedin.com/in/sushmith-thuluva-88a1a8160/"><i class="fa fa-linkedin"></i></a></li>   
+                        </ul>
                     </div>
-                <div class="image fit flip-card-back">
+                <!--<div class="image fit flip-card-back">
                     <h3>{{ f.name }}</h3>
                     <p>Founder</p>
                     <ul class="social-icons">
@@ -33,40 +68,143 @@
                         <li><a class="linkedin" href="{{ f.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
                     </ul>
                 </div>
-            </div>
+            </div>-->
         </div>
             {% endfor %}
     </div>
     </section>
 
     <section id="three" class="wrapper style2">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
         <div class="inner">
             <header class="align-center">
             <p class="special">
            </p>
             <h2>The Core</h2>
             </header>
-            <div class="gallery">
+            <div class="gallery team">
                 {% for c in core %}
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="image fit flip-card-front">
-                            <img src="{{ c.image.url }}" alt="" />
+                <div data-aos="fade-up">
+                    <!--<div class="flip-card-inner">-->
+                        <div class="image fit team">
+                            <img src="{{ c.image.url }}" alt="" /><br>
                             <h3>{{ c.name }}</h3>
                             <p>{{ c.post }}</p>
-                        </div>
-                        <div class="image fit flip-card-back">
-                            <h3>{{ c.name }}</h3>
-                            <p>{{ c.post }}</p>
-                            <ul class="social-icons">
+                            <ul class="social-icons hide">
                                 <li><a class="mail" href="mailto:{{ c.email }}"><i class="fa fa-envelope"></i></a></li>
                                 <li><a class="linkedin" href="{{ c.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
                             </ul>
                         </div>
-                    </div>
+                        <!--<div class="image fit flip-card-back">
+                            <h3>{{ c.name }}</h3>
+                            <p>{{ c.post }}</p>
+                            <ul class="social-icons hide">
+                                <li><a class="mail" href="mailto:{{ c.email }}"><i class="fa fa-envelope"></i></a></li>
+                                <li><a class="linkedin" href="{{ c.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
+                            </ul>
+                        </div>
+                    </div>-->
                 </div>
                 {% endfor %}
             </div>
         </div>
     </section>
+
+    <!--members dropdown-->
+    <section id="three" class="wrapper style2 members">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+            <div class="inner">
+                <header class="align-center">
+                    <p class="special">
+                    </p>
+                    <h2 data-aos="fade-down"> Members </h2><br>
+                </header>
+
+                <h3 style="text-align: center;" data-aos="fade-up">Technical</h3><hr>
+                    
+                <button class="accordion">ADCS</button>
+                    <div class="container panel">
+                        <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
+                            <div class="panel__head all-light"><img src="images/galaxy.jpg" alt="" />
+                                <h4 class="font__weight-medium font__size-21 ">ABCD</h4>
+                                <p class="font__family-open-sans font__size-14">ADCS head</p>
+                            </div>
+                            <ul class="panel__list">
+                                <li>
+                                    <span class="line"></span>
+                                    <i class="icon far fa-gem"></i>Member 1
+                                </li>
+                                <li>
+                                    <span class="line"></span>
+                                    <i class="icon fab fa-gg"></i>Member 2
+                                </li>
+                                <li>
+                                    <span class="line"></span>
+                                    <i class="icon far fa-gem"></i>Member 3
+                                </li>								
+                            </ul>
+                        </div>
+                    </div>
+
+                <button class="accordion">ODHS</button>
+                <!--<div class="panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>-->
+
+                <div class="container panel">
+                    <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
+                        <div class="panel__head all-light">
+                            <h4 class="font__family-montserrat font__weight-medium font__size-21">WXYZ</h4>
+                            <p class="font__family-open-sans font__size-14">ODHS head</p>
+                        </div>
+                        <ul class="panel__list">
+                            <li>
+                                <span class="line"></span>
+                                <i class="icon far fa-gem"></i>Member 1
+                            </li>
+                            <li>
+                                <span class="line"></span>
+                                <i class="icon fab fa-gg"></i>Member 2
+                            </li>
+                            <li>
+                                <span class="line"></span>
+                                <i class="icon far fa-gem"></i>Member 3
+                            </li>								
+                        </ul>
+                    </div>
+                </div>
+                <br><br>
+                <h3 style="text-align: center;" data-aos="fade-up">Non-technical</h3><hr>
+
+                <button class="accordion">Website and Design</button>
+                <div class="container panel">
+                    <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
+                        <div class="panel__head all-light"><img src="images/galaxy.jpg" alt="" />
+                            <h4 class=" font__weight-medium">WXYZ</h4>
+                            <p class="font__family-open-sans font__size-14">Website head</p>
+                        </div>
+                        <ul class="panel__list">
+                            <li>
+                                <span class="line"></span>
+                                <i class="icon far fa-gem"></i>Member 1
+                            </li>
+                            <li>
+                                <span class="line"></span>
+                                <i class="icon fab fa-gg"></i>Member 2
+                            </li>
+                            <li>
+                                <span class="line"></span>
+                                <i class="icon far fa-gem"></i>Member 3
+                            </li>								
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </section>
 {% endblock content %}

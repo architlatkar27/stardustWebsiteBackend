@@ -4,6 +4,8 @@
 
 /* Reset */
 
+
+
 /* particless   --------------------------------- */
 #stars {
   width: 1px;
@@ -2552,6 +2554,7 @@ hr {
   margin: 0 0 0.25rem 0;
   padding: 0 0 0.75rem 0;
   letter-spacing: 0.25rem;
+  
 }
 
 .box header p:after {
@@ -2697,7 +2700,7 @@ input[type="button"],
 button,
 .button {
   background-color: #f2f2f2;
-  color: #000 !important;
+  color: #000 ;
 }
 
 input[type="submit"]:hover,
@@ -2821,6 +2824,9 @@ img {
   width: 60%;
   margin-left: 20%;
   height: 250px;
+}
+.image.fit p {
+  color: whitesmoke;
 }
 
 .image.main {
@@ -3284,11 +3290,12 @@ header p {
   overflow: hidden;
 }
 
-.wrapper.style2 input,
+
+/*.wrapper.style2 input,
 .wrapper.style2 select,
 .wrapper.style2 textarea {
   color: #000;
-}
+}*/
 
 .wrapper.style2 strong,
 .wrapper.style2 b {
@@ -3707,14 +3714,17 @@ header p {
   -ms-flex-grow: 0;
   flex-grow: 0;
 }
+.gallery.team > *{
+  width:32% !important;
+}
 
 .gallery > * {
   width: 50%;
 }
 
 .gallery > * {
-  padding: 2rem;
-  width: calc(50% + 2rem);
+  padding: 0.5rem;
+  width: calc(50% + 0.5rem);
 }
 
 .gallery > :nth-child(n) {
@@ -3739,14 +3749,23 @@ header p {
 }
 
 .gallery .image {
-  background: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
   padding: 2.5rem;
 }
-
+.image.fit.team img{
+  width: 90%;
+  margin-left: 7%;
+  height: 260px;
+}
 .gallery .image.fit {
   margin: 0;
-  border: 0.5px solid rgb(41, 40, 40);
+  /*border: 0.5px solid rgb(41, 40, 40);*/
+
 }
+.image.fit.team{
+  padding: 1rem 1rem 1rem 1rem !important;
+}
+
 
 @media screen and (max-width: 980px) {
   .gallery > * {
@@ -3809,9 +3828,9 @@ header p {
 
 /* Header */
 
-body.subpage {
-  padding-top: 3.25em;
-}
+/*body.subpage {
+   padding-top: 3.25em;
+}*/
 
 @-moz-keyframes reveal-header {
   0% {
@@ -3862,10 +3881,10 @@ body.subpage {
 }
 
 #header {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: transparent;
   color: #a6a6a6;
   cursor: default;
-  height: 3.25em;
+  height: 6em;
   left: 0;
   line-height: 3.25em;
   position: fixed;
@@ -3989,9 +4008,9 @@ body.subpage {
 }
 
 @media screen and (max-width: 980px) {
-  body.subpage {
+  /*body.subpage {
     padding-top: 44px;
-  }
+  }*/
 
   #header {
     height: 44px;
@@ -4096,8 +4115,7 @@ body.subpage {
   right: 0;
   text-align: right;
   top: 0;
-  vertical-align: middle;
-  width: 7rem;
+  /*vertical-align: middle;*/
 }
 
 #menu .close:before {
@@ -4571,8 +4589,8 @@ body.is-mobile .banner > article {
   font-size: 13px;
 }
 .social-icons a {
-  background-color: #eceeef;
-  color: #818a91;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f9fbfc;
   font-size: 16px;
   display: inline-block;
   line-height: 44px;
@@ -4613,11 +4631,11 @@ body.is-mobile .banner > article {
   background-color: #ea4c89;
 }
 .image.fit a:link {
-  color: grey;
+  color: whitesmoke;
   text-decoration: none;
 }
 .image.fit a:hover {
-  color: white;
+  color: grey;
   text-decoration: underline;
 }
 @media (max-width: 767px) {
@@ -4663,7 +4681,7 @@ h2 a:hover {
   background: rgba(0, 0, 0, 0.7);
   text-align: center;
   padding: 5rem 2rem 2rem 2rem;
-  color: #f2f2f2b6;
+  color: #fff;
   /* font-size: 0.7em; */
   transition: 1s;
 }
@@ -4704,10 +4722,18 @@ h2 a:hover {
 }
 /*slide in end*/
 
+.hide{
+  display: none;
+}
+/* hover effect for team cards to be done*/
+.image.image.fit.team:hover  .hide{
+  display: block;
+}
+
 .flip-card {
   background-color: transparent;
   width: 400px;
-  height: 450px;
+  height: 480px;
   perspective: 1000px;
 }
 
@@ -4718,11 +4744,17 @@ h2 a:hover {
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
+  background-color:rgba(0, 0, 0, 0.3) ;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
+}
+
+.flip-card:hover {
+  color: black;
 }
 
 .flip-card-front,
@@ -4745,6 +4777,227 @@ h2 a:hover {
   transform: rotateY(180deg);
 }
 
+/*.members{
+  color: #000;
+}*/
+.accordion {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  border-color: #fff ;
+}
+
+.active, .accordion:hover {
+  background: linear-gradient(to right,#515152,#0c0c0c);
+ 
+}
+
+.panel {
+  padding: 0 8px;
+  background-color: white;
+  max-height: 0;
+  width: 100%;
+  overflow: auto;
+  transition: max-height 0.2s ease-out;
+}
+
+.panel img{
+  width: 20rem;
+}
+.panel h4{
+  text-align: right !important;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+.panel__head, .panel__list {
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.panel__wrapper-icon .panel__head {
+  background: linear-gradient(to right,#515152,#0c0c0c);
+  padding: 24px 40px;
+  box-shadow: 0 6px 30px 0 rgba(0,0,0,.12);
+  color: rgba(255,255,255,.9);
+}
+
+@media (min-width: 768px){
+  .panel__wrapper-icon .panel__head {
+    padding: 24px 50px;
+  }
+}
+
+@media (min-width: 992px){
+  .panel__wrapper-icon .panel__head {
+      display: flex;
+      align-items: center;
+  }
+}
+
+@media (min-width: 992px){
+  .panel__wrapper-icon .panel__head p {
+      margin-top: 0;
+      margin-left: 58px;
+  }
+  .panel__wrapper-icon .panel__head p {
+      flex: 1;
+      margin-top: 20px;
+  }
+}
+
+.panel__head, .panel__list {
+  text-align: left;
+}
+
+.panel__wrapper-icon .panel__list {
+  background: #000;
+  box-shadow: 0 6px 30px 0 rgba(0,0,0,.12);
+}
+.panel__head, .panel__list {
+  text-align: left;
+}
+.panel__list {
+  list-style: none;
+  margin: 0;
+}
+
+.panel__wrapper-icon .panel__list li {
+  color: #4e4e4e;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  border-bottom: 1px solid #ececec;
+  position: relative;
+  z-index: 1;
+  padding: 28px;
+}
+
+.panel__wrapper-icon .panel__list li .line {
+  position: absolute;
+  top: 50%;
+  transform: translate(0,-50%);
+  left: 0;
+  width: 3px;
+  height: 40px;
+  /*background: linear-gradient(to bottom,#2775ff,#7202bb);*/
+  opacity: 0;
+  transition: all .3s ease;
+}
+.panel__wrapper-icon .panel__list li:hover {
+  z-index: 2;
+  color: #000;
+}
+.panel__wrapper-icon .panel__list li:hover .line {
+  opacity: 1;
+  left: -15px;
+  transition-delay: .1s;
+  
+}
+
+.panel__wrapper-icon .panel__list li:nth-child(2n) {
+  background: #1d1e1f;
+}
+
+@media screen and (min-width: 576px){
+.panel__wrapper-icon .panel__list li {
+  padding-left: 110px;
+}
+}
+
+.panel__wrapper-icon .panel__list li {
+  color: #4e4e4e;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  border-bottom: 1px solid #ececec;
+  position: relative;
+  z-index: 1;
+  padding: 28px;
+}
+
+.panel__wrapper-icon .panel__list li:hover:after, .panel__wrapper-table .panel__list li:hover:after {
+  transform: scale(1);
+  opacity: 1;
+  
+ 
+}
+
+.panel__wrapper-gradient .panel__list li:after, .panel__wrapper-icon .panel__list li:after, .panel__wrapper-table .panel__list li:after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -15px;
+  right: -15px;
+  bottom: -6px;
+  background: #fff;
+  box-shadow: 0 6px 30px 0 rgba(0,0,0,.12);
+  opacity: 0;
+  transition: all .3s ease;
+  transform: scale(.95);
+  z-index: -1;
+  
+}
+
+
+.panel__wrapper-icon .panel__head p {
+  margin-top: 0;
+  margin-left: 58px;
+}
+
+.panel__wrapper-icon .panel__head {
+  display: flex;
+  align-items: center;
+}
+
+.panel__wrapper-icon .panel__list li .icon {
+  font-size: 36px;
+  color: #2775ff;
+  opacity: .5;
+  transition: all .3s ease;
+  position: relative;
+  margin-bottom: 20px;
+  width: auto!important;
+  height: auto!important;
+  line-height: normal!important;
+  margin-left: 0!important;
+}
+
+.fal, .far {
+  font-weight: 600!important;
+}
+.panel__wrapper-icon .panel__list li {
+  color: #fffefe;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  border-bottom: 1px solid #ececec;
+  position: relative;
+  z-index: 1;
+  padding: 28px;
+}
+
+.panel__wrapper-icon .panel__list li .icon {
+  position: absolute;
+  left: 40px;
+  margin-bottom: 0;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+.panel__wrapper-icon .panel__list li {
+  padding-left: 110px;
+}
+.panel__wrapper-icon .panel__list li:hover .icon {
+  opacity: 1;
+  
+}
+/**********end of panel**************/
 @media screen and (min-width: 980px) {
   .IM {
     margin-left: 300px;
