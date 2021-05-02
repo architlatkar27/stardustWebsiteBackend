@@ -18,7 +18,8 @@ class Student(models.Model):
     STATUS = (
         ('F', "Founder"),
         ('C', "Core Member"),
-        ('M', "Member")
+        ('TM', "Technical Member"),
+        ('NM', 'Nontechnical Member')
     ) 
     DEPT = (
         ("CSE", "Computer Science and Engineering"),
