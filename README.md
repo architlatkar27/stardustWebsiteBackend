@@ -5,10 +5,10 @@ Backend for Stardust Website
 create a virtual env for django
 for that:
 $conda create -n <yourenvname>
-  to activate:
+to activate:
 $conda activate <yourenvname>
   
-  then go to directory where the projects is and:
+then go to directory where the projects is and:
 
 $pip install Django
 
