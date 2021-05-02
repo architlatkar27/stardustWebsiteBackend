@@ -56,8 +56,8 @@
                         <h3>{{ f.name }}</h3>
                         <p>Founder</p>
                         <ul class="social-icons hide">
-                            <li><a class="mail" href="#"><i class="fa fa-envelope"></i></a></li>
-                            <li><a class="linkedin" href="https://www.linkedin.com/in/sushmith-thuluva-88a1a8160/"><i class="fa fa-linkedin"></i></a></li>   
+                            <li><a class="mail" href="{{ f.email }}"><i class="fa fa-envelope"></i></a></li>
+                            <li><a class="linkedin" href="{{ f.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
                         </ul>
                     </div>
                 <!--<div class="image fit flip-card-back">
@@ -125,35 +125,36 @@
                 </header>
 
                 <h3 style="text-align: center;" data-aos="fade-up">Technical</h3><hr>
-                    
-                <button class="accordion">ADCS</button>
+
+                {% for t in tech %}    
+                <button class="accordion">{{ t.subsystem }}</button>
                     <div class="container panel">
                         <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
-                            <div class="panel__head all-light"><img class="memimg" src="{% static 'images/galaxy.jpg' %}" alt="" />
-                                <h4 class="head">ABCD</h4>
-                                <p class="headname">ADCS head</p>
+                            <div class="panel__head all-light"><img class="memimg" src="{{ t.member.image }}" alt="" />
+                                <h4 class="head">{{ t.member.name }}</h4>
+                                <p class="headpost">{{ t.position }}</p>
                             </div>
+                            {% for t1 in tech_mem %}
                             <ul class="panel__list">
                                 <li>
                                     <span class="line"></span>
-                                    <i class="icon far fa-gem"></i>Member 1
+                                    <i class="icon far fa-gem"></i>{{ t1.member.name }}
                                 </li>
-                                <li>
+                            {% endfor %}
+                                <!--<li>
                                     <span class="line"></span>
                                     <i class="icon fab fa-gg"></i>Member 2
                                 </li>
                                 <li>
                                     <span class="line"></span>
                                     <i class="icon far fa-gem"></i>Member 3
-                                </li>								
+                                </li>-->								
                             </ul>
                         </div>
                     </div>
+                    {% endfor %}
 
-                <button class="accordion">ODHS</button>
-                <!--<div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>-->
+                <!--<button class="accordion">ODHS</button>
 
                 <div class="container panel">
                     <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
@@ -176,34 +177,38 @@
                             </li>								
                         </ul>
                     </div>
-                </div>
+                </div>-->
                 <br><br>
+                
                 <h3 style="text-align: center;" data-aos="fade-up">Non-technical</h3><hr>
+                {% for n in nontech %}
 
-                <button class="accordion">Website and Design</button>
+                <button class="accordion">{{ n.team }}</button>
                 <div class="container panel">
                     <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
-                        <div class="panel__head all-light"><img src="{% static 'images/galaxy.jpg' %}" alt="" />
-                            <h4 class="">WXYZ</h4>
-                            <p class="">Website head</p>
+                        <div class="panel__head all-light"><img src="{{ t.member.image }}" alt="" />
+                            <h4 class="head">{{ n.member.name }}</h4>
+                            <p class="headpost">{{ n.team }} head</p>
                         </div>
+                        {% for n1 in nontech_mem %}
                         <ul class="panel__list">
                             <li>
                                 <span class="line"></span>
-                                <i class="icon far fa-gem"></i>Member 1
+                                <i class="icon far fa-gem"></i>{{ n1.member.name }}
                             </li>
-                            <li>
+                        {% endfor %}
+                            <!--<li>
                                 <span class="line"></span>
                                 <i class="icon fab fa-gg"></i>Member 2
                             </li>
                             <li>
                                 <span class="line"></span>
                                 <i class="icon far fa-gem"></i>Member 3
-                            </li>								
+                            </li>-->								
                         </ul>
                     </div>
                 </div>
-                
+                {% endfor %}
             </div>
             
         </section>
