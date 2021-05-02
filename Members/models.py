@@ -108,10 +108,18 @@ class NonTechnical(models.Model):
         ("FIN","Finance")
     )
 
+    NPOST = (
+        #("None", "None"),
+        ("H", "Head"),
+        ("SH","Sub Head"),
+        ("M","Member")
+    )
+
     objects        = models.Manager()
 
     member         = models.ForeignKey(Student, on_delete=models.CASCADE, unique=True)
     team           = models.CharField(choices=NONTECH, max_length=4)
+    position       = models.CharField(choices=NPOST,default='M', max_length=5)
 
     def __str__(self):
         pass
