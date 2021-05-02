@@ -130,15 +130,15 @@
                 <button class="accordion">{{ sub.grouper }}</button>
                     <div class="container panel">
                         {% for m in sub.list %}
-                        {% if position != "None" %}
+                        {% if m.position != "None" %}
                         <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
                             <div class="panel__head all-light"><img class="memimg" src="{{ m.member.image }}" alt="" />
                                 <h4 class="head">{{ m.member.name }}</h4>
                                 <p class="headpost">{{ m.position }}</p>
                             </div> 
-                            {% endif %}
-                           
-                            {% if position == "None" %}
+                        {% endif %}
+                        {% for m in sub.list %}
+                            {% if m.position == "None" %}
                             <ul class="panel__list">
                                 <li>
                                     <span class="line"></span>
@@ -146,35 +146,12 @@
                                 </li>								
                             </ul>
                             {% endif %}
+                        {% endfor %}
                         </div>
                         {% endfor %}
                     </div>
                     {% endfor %}
 
-                <!--<button class="accordion">ODHS</button>
-
-                <div class="container panel">
-                    <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
-                        <div class="panel__head all-light"><img src="{% static 'images/galaxy.jpg' %}" alt="" />
-                            <h4 class="">WXYZ</h4>
-                            <p class="">ODHS head</p>
-                        </div>
-                        <ul class="panel__list">
-                            <li>
-                                <span class="line"></span>
-                                <i class="icon far fa-gem"></i>Member 1
-                            </li>
-                            <li>
-                                <span class="line"></span>
-                                <i class="icon fab fa-gg"></i>Member 2
-                            </li>
-                            <li>
-                                <span class="line"></span>
-                                <i class="icon far fa-gem"></i>Member 3
-                            </li>								
-                        </ul>
-                    </div>
-                </div>-->
                 <br><br>
                 
                 <h3 style="text-align: center;" data-aos="fade-up">Non-technical</h3><hr>
@@ -183,22 +160,27 @@
                 <button class="accordion">{{ t.grouper }}</button>
                 <div class="container panel">
                     {% for m in t.list %}
-                        {% if position != "M" %}
-                    <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
-                        <div class="panel__head all-light"><img src="{{ m.member.image }}" alt="" />
-                            <h4 class="head">{{ m.member.name }}</h4>
-                            <p class="headpost">{{ m.team }} head</p>
-                        </div>
+                        {% if m.position != "None" %}
+                        <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
+                            <div class="panel__head all-light"><img src="{{ m.member.image }}" alt="" />
+                                <h4 class="head">{{ m.member.name }}</h4>
+                                <p class="headpost">{{ m.team }} head</p>
+                            </div>
                         {% endif %}
 
-                        {% if position == "M" %}
-                        <ul class="panel__list">
-                            <li>
-                                <span class="line"></span>
-                                <i class="icon far fa-gem"></i>{{ m.member.name }}
-                            </li>								
-                        </ul>
-                        {% endif %}
+                        {% for m in t.list %}
+                            
+                            {% if m.position == "None" %}
+                            
+                            <ul class="panel__list">
+                                <li>
+                                    <span class="line"></span>
+                                    <i class="icon far fa-gem"></i>{{ n.member.name }}
+                                </li>								
+                            </ul>
+                            
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     {% endfor %}
                 </div>
