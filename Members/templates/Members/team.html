@@ -126,7 +126,7 @@
 
                 <h3 style="text-align: center;" data-aos="fade-up">Technical</h3><hr>
                 {% regroup tech by subsystem as subsytem_list %}
-                {% for sub in subsytem_list %}    
+            {% for sub in subsytem_list %}    
                 <button class="accordion">{{ sub.grouper }}</button>
                     <div class="container panel">
                         {% for m in sub.list %}
