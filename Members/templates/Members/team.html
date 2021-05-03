@@ -91,7 +91,7 @@
                         <div class="image fit team">
                             <img src="{{ c.image.url }}" alt="" /><br>
                             <h3>{{ c.name }}</h3>
-                            <p>{{ c.post }}</p>
+                            <p>{{ c.core_position }}</p>
                             <ul class="social-icons hide">
                                 <li><a class="mail" href="mailto:{{ c.email }}"><i class="fa fa-envelope"></i></a></li>
                                 <li><a class="linkedin" href="{{ c.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
@@ -126,31 +126,31 @@
 
                 <h3 style="text-align: center;" data-aos="fade-up">Technical</h3><hr>
                 {% regroup tech by subsystem as subsytem_list %}
-            {% for sub in subsytem_list %}    
-                <button class="accordion">{{ sub.grouper }}</button>
-                    <div class="container panel">
-                        {% for m in sub.list %}
-                        {% if m.position != "None" %}
-                        <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
-                            <div class="panel__head all-light"><img class="memimg" src="{{ m.member.image }}" alt="" />
-                                <h4 class="head">{{ m.member.name }}</h4>
-                                <p class="headpost">{{ m.position }}</p>
-                            </div> 
-                        {% endif %}
-                        {% for m in sub.list %}
-                            {% if m.position == "None" %}
-                            <ul class="panel__list">
-                                <li>
-                                    <span class="line"></span>
-                                    <i class="icon far fa-gem"></i>{{ m.member.name }}
-                                </li>								
-                            </ul>
-                            {% endif %}
-                        {% endfor %}
+                {% for sub in subsytem_list %}    
+                    <button class="accordion">{{ sub.grouper }}</button>
+                        <div class="container panel">
+                            {% for m in sub.list %}
+                                {% if m.position != "None" %}
+                                    <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
+                                        <div class="panel__head all-light"><img class="memimg" src="{{ m.member.image }}" alt="" />
+                                            <h4 class="head">{{ m.member.name }}</h4>
+                                            <p class="headpost">{{ m.position }}</p>
+                                        </div>
+                                {% endif %}
+                                <!--{% for m in sub.list %}-->
+                                {% if m.position == "None" %}
+                                    <ul class="panel__list">
+                                        <li>
+                                            <span class="line"></span>
+                                            <i class="icon far fa-gem"></i>{{ m.member.name }}
+                                        </li>								
+                                    </ul>
+                                {% endif %}
+                                <!--{% endfor %}-->
+                                </div>
+                            {% endfor %}
                         </div>
-                        {% endfor %}
-                    </div>
-                    {% endfor %}
+                {% endfor %}
 
                 <br><br>
                 
@@ -161,31 +161,24 @@
                 <div class="container panel">
                     {% for m in t.list %}
                         {% if m.position != "None" %}
-                        <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
-                            <div class="panel__head all-light"><img src="{{ m.member.image }}" alt="" />
-                                <h4 class="head">{{ m.member.name }}</h4>
-                                <p class="headpost">{{ m.team }} head</p>
-                            </div>
-                        {% endif %}
-
-                        {% for m in t.list %}
-                            
-                            {% if m.position == "None" %}
-                            
-                            <ul class="panel__list">
-                                <li>
-                                    <span class="line"></span>
-                                    <i class="icon far fa-gem"></i>{{ n.member.name }}
-                                </li>								
-                            </ul>
-                            
+                            <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
+                                    <div class="panel__head all-light"><img src="{{ m.member.image }}" alt="" />
+                                        <h4 class="head">{{ m.member.name }}</h4>
+                                        <p class="headpost">{{ m.team }} head</p>
+                                    </div>
                             {% endif %}
-                        {% endfor %}
-                    </div>
+                            {% if m.position == "None" %}
+                                <ul class="panel__list">
+                                    <li>
+                                        <span class="line"></span>
+                                        <i class="icon far fa-gem"></i>{{ n.member.name }}
+                                    </li>								
+                                </ul>
+                            {% endif %}
+                        </div>
                     {% endfor %}
                 </div>
                 {% endfor %}
             </div>
-            
         </section>
 {% endblock content %}
