@@ -90,7 +90,7 @@ class Technical(models.Model):
     position       = models.CharField(choices=SSPOSTS, max_length=5)
 
     def __str__(self):
-        return self.member.name #+ self.subsystem
+        return self.member.name 
     
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

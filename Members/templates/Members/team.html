@@ -124,7 +124,7 @@
                     <h2 data-aos="fade-down"> Members </h2><br>
                 </header>
 
-                <h3 style="text-align: center;" data-aos="fade-up">Technical</h3><hr>
+                <!--<h3 style="text-align: center;" data-aos="fade-up">Technical</h3><hr>
                 {% regroup tech by subsystem as subsytem_list %}
                 {% for sub in subsytem_list %}    
                     <button class="accordion">{{ sub.grouper }}</button>
@@ -136,20 +136,52 @@
                                             <h4 class="head">{{ m.member.name }}</h4>
                                             <p class="headpost">{{ m.position }}</p>
                                         </div>
-                                {% endif %}
-                                <!--{% for m in sub.list %}-->
-                                {% if m.position == "None" %}
+                            {% endif %}
+                            
+                            {% for m in sub.list %}
                                     <ul class="panel__list">
+                                        {% if m.position == "None" %}
                                         <li>
                                             <span class="line"></span>
                                             <i class="icon far fa-gem"></i>{{ m.member.name }}
-                                        </li>								
+                                        </li>	
+                                        {% endif %}							
                                     </ul>
-                                {% endif %}
-                                <!--{% endfor %}-->
-                                </div>
                             {% endfor %}
+                                </div>
+                            {% endfor %}    
                         </div>
+                {% endfor %}-->
+
+                <h3 style="text-align: center;" data-aos="fade-up">Technical</h3><hr>
+                {% regroup tech by subsystem as team_list %}
+                {% for t in team_list %} 
+                <button class="accordion">{{ t.grouper }}</button>
+                <div class="container panel">
+                   
+                    <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
+                        {% for m in t.list %}
+                            {% if m.position != "None" %}
+                                <div class="panel__head all-light"><img src="{{ m.member.image }}" alt="" />
+                                    <h4 class="head">{{ m.member.name }}</h4>
+                                    <p class="headpost">{{ m.position }}</p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% for m in t.list %}
+                            <ul class="panel__list">
+                                {% if m.position == "None" %}
+                                <li>
+                                    <span class="line"></span>
+                                    <i class="icon far fa-gem"></i>{{ m.member.name }}
+                                </li>
+                                {% endif %}								
+                                </ul>
+                        {% endfor %}   
+                    </div>
+                    
+                </div>
                 {% endfor %}
 
                 <br><br>
@@ -164,21 +196,59 @@
                             <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
                                     <div class="panel__head all-light"><img src="{{ m.member.image }}" alt="" />
                                         <h4 class="head">{{ m.member.name }}</h4>
-                                        <p class="headpost">{{ m.team }} head</p>
+                                        <p class="headpost">{{ m.position }}</p>
                                     </div>
-                            {% endif %}
-                            {% if m.position == "None" %}
-                                <ul class="panel__list">
-                                    <li>
-                                        <span class="line"></span>
-                                        <i class="icon far fa-gem"></i>{{ n.member.name }}
-                                    </li>								
-                                </ul>
-                            {% endif %}
-                        </div>
+                        {% endif %}
                     {% endfor %}
+
+                    {% for m in t.list %}
+                            <ul class="panel__list">
+                                {% if m.position == "None" %}
+                                 <li>
+                                     <span class="line"></span>
+                                     <i class="icon far fa-gem"></i>{{ m.member.name }}
+                                  </li>
+                                {% endif %}								
+                               </ul>
+                    {% endfor %}   
+                            </div>
+                    
                 </div>
                 {% endfor %}
+             </div>
+
+
+                <!--<h3 style="text-align: center;" data-aos="fade-up">Technical</h3><hr>
+                {% regroup tech by subsystem as team_list %}
+                {% for t in team_list %} 
+                <button class="accordion">{{ t.grouper }}</button>
+                <div class="container panel">
+                   
+                    <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
+                        {% for m in t.list %}
+                            {% if m.position != "None" %}
+                                <div class="panel__head all-light"><img src="{{ m.member.image }}" alt="" />
+                                    <h4 class="head">{{ m.member.name }}</h4>
+                                    <p class="headpost">{{ m.position }}</p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% for m in t.list %}
+                            <ul class="panel__list">
+                                {% if m.position == "None" %}
+                                <li>
+                                    <span class="line"></span>
+                                    <i class="icon far fa-gem"></i>{{ m.member.name }}
+                                </li>
+                                {% endif %}								
+                                </ul>
+                        {% endfor %}   
+                    </div>
+                    
+                </div>
+                {% endfor %}-->
             </div>
+
         </section>
 {% endblock content %}
