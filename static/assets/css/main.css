@@ -5020,6 +5020,7 @@ h2 a:hover {
   position: relative;
   z-index: 1;
   padding: 28px;
+  overflow: hidden;
 }
 
 .panel__wrapper-icon .panel__list li .icon {
