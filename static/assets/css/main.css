@@ -2828,6 +2828,10 @@ img {
 .image.fit p {
   color: whitesmoke;
 }
+.image.fit a {
+  color: black;
+  cursor: pointer;
+}
 
 .image.main {
   display: block;
@@ -3760,7 +3764,12 @@ header p {
 .gallery .image.fit {
   margin: 0;
   /*border: 0.5px solid rgb(41, 40, 40);*/
+}
 
+.image.fit.achv img{
+  width: 90%;
+  margin-left: 7%;
+  height: 350px;
 }
 .image.fit.team{
   padding: 1rem 1rem 1rem 1rem !important;
@@ -5020,7 +5029,7 @@ h2 a:hover {
   position: relative;
   z-index: 1;
   padding: 28px;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .panel__wrapper-icon .panel__list li .icon {
