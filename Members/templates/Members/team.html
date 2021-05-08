@@ -91,7 +91,7 @@
                         <div class="image fit team">
                             <img src="{{ c.image.url }}" alt="" /><br>
                             <h3>{{ c.name }}</h3>
-                            <p>{{ c.core_position }}</p>
+                            <p>{{ c.get_core_position_display }}</p>
                             <ul class="social-icons hide">
                                 <li><a class="mail" href="mailto:{{ c.email }}"><i class="fa fa-envelope"></i></a></li>
                                 <li><a class="linkedin" href="{{ c.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
@@ -124,37 +124,8 @@
                     <h2 data-aos="fade-down"> Members </h2><br>
                 </header>
 
-                <!--<h3 style="text-align: center;" data-aos="fade-up">Technical</h3><hr>
-                {% regroup tech by subsystem as subsytem_list %}
-                {% for sub in subsytem_list %}    
-                    <button class="accordion">{{ sub.grouper }}</button>
-                        <div class="container panel">
-                            {% for m in sub.list %}
-                                {% if m.position != "None" %}
-                                    <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
-                                        <div class="panel__head all-light"><img class="memimg" src="{{ m.member.image }}" alt="" />
-                                            <h4 class="head">{{ m.member.name }}</h4>
-                                            <p class="headpost">{{ m.position }}</p>
-                                        </div>
-                            {% endif %}
-                            
-                            {% for m in sub.list %}
-                                    <ul class="panel__list">
-                                        {% if m.position == "None" %}
-                                        <li>
-                                            <span class="line"></span>
-                                            <i class="icon far fa-gem"></i>{{ m.member.name }}
-                                        </li>	
-                                        {% endif %}							
-                                    </ul>
-                            {% endfor %}
-                                </div>
-                            {% endfor %}    
-                        </div>
-                {% endfor %}-->
-
                 <h3 style="text-align: center;" data-aos="fade-up">Technical</h3><hr>
-                {% regroup tech by subsystem as team_list %}
+                {% regroup tech by get_subsystem_display as team_list %}
                 {% for t in team_list %} 
                 <button class="accordion">{{ t.grouper }}</button>
                 <div class="container panel">
@@ -164,7 +135,7 @@
                             {% if m.position != "None" %}
                                 <div class="panel__head all-light"><img src="{{ m.member.image.url }}" alt="" />
                                     <h4 class="head">{{ m.member.name }}</h4>
-                                    <p class="headpost">{{ m.position }}</p>
+                                    <p class="headpost">{{ m.get_position_display }}</p>
                                 </div>
                             {% endif %}
                         {% endfor %}
@@ -187,7 +158,7 @@
                 <br><br>
                 
                 <h3 style="text-align: center;" data-aos="fade-up">Non-technical</h3><hr>
-                {% regroup nontech by team as team_list %}
+                {% regroup nontech by get_team_display as team_list %}
                 {% for t in team_list %} 
                 <button class="accordion">{{ t.grouper }}</button>
                 <div class="container panel">
@@ -196,7 +167,7 @@
                             <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
                                     <div class="panel__head all-light"><img src="{{ m.member.image.url }}" alt="" />
                                         <h4 class="head">{{ m.member.name }}</h4>
-                                        <p class="headpost">{{ m.position }}</p>
+                                        <p class="headpost">{{ m.get_position_display }}</p>
                                     </div>
                         {% endif %}
                     {% endfor %}
