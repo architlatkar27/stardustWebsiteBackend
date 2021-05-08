@@ -11,6 +11,9 @@
 </section>
 
 <section id="two" class="wrapper style2">
+  <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
     <div class="inner">
       <!--<header class="align-center">
                           <p class="special">
@@ -19,15 +22,15 @@
                           </p>
                           <h2>Morbi maximus justo</h2>
                         </header>-->
-      <div class="gallery">
+      <div class="gallery achv">
         {% for a in achievements %}
         <div class="flip-card">
           <div class="flip-card-inner">
-            <div class="image fit flip-card-front">
+            <div class="image fit achv flip-card-front">
               <img
                 src="{{ a.photo.url }}"
                 alt=""
-              />
+              /><br>
               <h2>{{ a.title }}</h2>
               <!--<p>The members gained a first hand experience in building and deploying a mini cansat</p>-->
             </div>
@@ -36,6 +39,7 @@
               <p>
                 {{ a.description }}
               </p>
+              <a><p>Know More!</p></a>
             </div>
           </div>
         </div>

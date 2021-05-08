@@ -18,7 +18,8 @@ class Student(models.Model):
     STATUS = (
         ('F', "Founder"),
         ('C', "Core Member"),
-        ('M', "Member")
+        ('TM', "Technical Member"),
+        ('NM', 'Nontechnical Member')
     ) 
     DEPT = (
         ("CSE", "Computer Science and Engineering"),
@@ -75,7 +76,7 @@ class Technical(models.Model):
         ("STR", "Structure and Thermal"),
     )
     SSPOSTS = (
-        #("None", "None"),
+        ("None", "None"),
         ("SSH", "Subsystem Head"),
         ("CSE", "Chief System Engineer"),
         ("SE", "System Engineer"),
@@ -89,10 +90,10 @@ class Technical(models.Model):
     position       = models.CharField(choices=SSPOSTS, max_length=5)
 
     def __str__(self):
-        pass
+        return self.member.name #+ self.subsystem
     
     def save(self, *args, **kwargs):
-        pass
+        super().save(*args, **kwargs)
 
 
 
@@ -107,16 +108,23 @@ class NonTechnical(models.Model):
         ("FIN","Finance")
     )
 
+    NPOST = (
+        ("None", "None"),
+        ("H", "Head"),
+        ("SH","Sub Head")
+    )
+
     objects        = models.Manager()
 
     member         = models.ForeignKey(Student, on_delete=models.CASCADE, unique=True)
     team           = models.CharField(choices=NONTECH, max_length=4)
+    position       = models.CharField(choices=NPOST,default='None', max_length=5)
 
     def __str__(self):
-        pass
+        return self.member.name
 
     def save(self, *args, **kwargs):
-        pass
+        super().save(*args, **kwargs)
 
 
 class Faculty(models.Model):

@@ -7,34 +7,36 @@
     <link
       rel="icon"
       type="image/png"
-      src="{% static 'images/logo-3.png' %}"
+      src="{% static 'images/logo black.png' %}"
       href="{% url 'other:home' %}"
     />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
       rel="stylesheet"
       type="text/css"
     />
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
     <!-- <link rel="stylesheet" href="styles2.css" /> -->
   </head>
   <body>
     
     <!-- Header -->
-    <header id="header" class="alt">
+    <header id="header" >
       <div class="logo">
         <a href="#">
           <img
-            src="{% static 'images/logo-3.png' %}"
-            width="50px"
-            height="50px"
+            src="{% static 'images/logo.png' %}"
+            width="85px"
+            height="85px"
           />
         </a>
       </div>
@@ -46,6 +48,7 @@
       <ul class="links">
         <li><a href="{% url 'other:home' %}">Home</a></li>
         <li><a href="{% url 'Achievements:achievements' %}">Achievements</a></li>
+        <!--<li><a href="{% url 'Events:events' %}">Events</a></li>-->
         <li><a href="{% url 'Members:team' %}">The Team</a></li>
         <li><a href="{% url 'other:subsystems' %}">Subsytems</a></li>
         <li><a href="{% url 'other:contact' %}">Contact us</a></li>
@@ -74,7 +77,7 @@
             ISRO and college Faculty.
             </p>
             <a href="http://msrit.edu/department/ece.html">
-            <img src="{% static "images/logo-dark.png" %}" width="300px" class="dark"
+            <img src="{% static 'images/logo-dark.png' %}" width="300px" class="dark"
             /></a>
             <p><a href="contact.html">Contact Us</a></p>
             <button id="scrollToTopBtn">🚀</button>
@@ -125,9 +128,7 @@
     <script src="{% static "assets/js/skel.min.js" %}"></script>
     <script src="{% static "assets/js/util.js" %}"></script>
     <script src="{% static "assets/js/main.js" %}"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-    AOS.init();
-    </script>
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+			<script>AOS.init();</script>
 </body>
 </html>
