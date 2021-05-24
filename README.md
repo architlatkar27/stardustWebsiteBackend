@@ -20,3 +20,6 @@ $python manage.py makemigrations
 then 
 $python manage.py migrate
 
+to reactivate the env:
+on windows: activate your_env_name
+
