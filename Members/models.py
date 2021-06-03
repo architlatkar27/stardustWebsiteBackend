@@ -10,7 +10,8 @@ class Student(models.Model):
         #("PS", "Project Supervisor"),
         ("MM", "Mission Manager"),
         ("MD", "Mission Director"),
-        ("TM", "Team Manager")
+        ("TM", "Team Manager"),
+        ("NH","Non-Technical Head")
         #("MS", "Mission Supervisor"),
         #("OH", "Operation Head"),
     ) 
@@ -99,12 +100,11 @@ class Technical(models.Model):
 class NonTechnical(models.Model):
     
     NONTECH = (
-        ("WEB","Website"),
+        ("WEB","Website and Design"),
         ("SPR","Public Relations and Sponsorship"),
         #("SP","Sponsorship"),
         ("SM","Social Media"),
         ("DOC","Documentation"),
-        ("FIN","Finance")
     )
 
     NPOST = (

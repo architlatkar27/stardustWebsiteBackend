@@ -133,7 +133,7 @@
                     <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
                         {% for m in t.list %}
                             {% if m.position != "None" %}
-                                <div class="panel__head all-light"><img src="{{ m.member.image.url }}" alt="" />
+                                <div class="panel__head all-light">
                                     <h4 class="head">{{ m.member.name }}</h4>
                                     <p class="headpost">{{ m.get_position_display }}</p>
                                 </div>
@@ -165,7 +165,7 @@
                     {% for m in t.list %}
                         {% if m.position != "None" %}
                             <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
-                                    <div class="panel__head all-light"><img src="{{ m.member.image.url }}" alt="" />
+                                    <div class="panel__head all-light">
                                         <h4 class="head">{{ m.member.name }}</h4>
                                         <p class="headpost">{{ m.get_position_display }}</p>
                                     </div>
