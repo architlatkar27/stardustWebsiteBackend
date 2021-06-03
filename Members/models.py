@@ -41,7 +41,7 @@ class Student(models.Model):
     name           = models.CharField(max_length=60, blank=False, primary_key=True)
     branch         = models.CharField(max_length=40, choices = DEPT)
     # year           = models.IntegerField()
-    email          = models.EmailField()
+    email          = models.EmailField(null= True,blank=True)
     linkedin       = models.URLField(null= True,blank=True)
     # phone          = models.IntegerField()
     image          = models.ImageField(null=True, blank=True, upload_to='student_photo/')
