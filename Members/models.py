@@ -47,7 +47,7 @@ class Student(models.Model):
     image          = models.ImageField(null=True, blank=True, upload_to='student_photo/')
     status         = models.CharField(null=True, blank=True, max_length=10, choices=STATUS)
     is_active      = models.BooleanField(default=True)
-    core_position  = models.CharField(choices=COREPOSTS, max_length=4, null=True, blank=True)
+    core_position  = models.CharField(choices=COREPOSTS, default='None',max_length=4, null=True, blank=True)
     rank           = models.IntegerField(null=True)
 
     def save(self, *args, **kwargs):
