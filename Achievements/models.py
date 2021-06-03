@@ -9,4 +9,5 @@ class Achievement(models.Model):
     date           = models.DateField(auto_now=False, auto_now_add=False, verbose_name="prize_date")
     photo          = models.ImageField(null=True, blank=True)
     
-  
+    def __str__(self):
+        return self.title

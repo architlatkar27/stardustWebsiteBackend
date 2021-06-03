@@ -18,8 +18,6 @@ class Student(models.Model):
     STATUS = (
         ('F', "Founder"),
         ('C', "Core Member"),
-        ('TM', "Technical Member"),
-        ('NM', 'Nontechnical Member')
     ) 
     DEPT = (
         ("CSE", "Computer Science and Engineering"),
@@ -44,7 +42,7 @@ class Student(models.Model):
     branch         = models.CharField(max_length=40, choices = DEPT)
     # year           = models.IntegerField()
     email          = models.EmailField()
-    linkedin       = models.URLField()
+    linkedin       = models.URLField(null= True,blank=True)
     # phone          = models.IntegerField()
     image          = models.ImageField(null=True, blank=True, upload_to='student_photo/')
     status         = models.CharField(null=True, blank=True, max_length=10, choices=STATUS)
@@ -74,6 +72,7 @@ class Technical(models.Model):
         ("ODHS", "ODHS"),
         ("GC", "Communication"),
         ("STR", "Structure and Thermal"),
+        ("ROC","Rocketry")
     )
     SSPOSTS = (
         ("None", "None"),
@@ -85,7 +84,7 @@ class Technical(models.Model):
 
     objects        = models.Manager()
 
-    member         = models.ForeignKey(Student, on_delete=models.CASCADE, unique=True)
+    member         = models.OneToOneField(Student, on_delete=models.CASCADE, unique=True)
     subsystem      = models.CharField(choices=SUBSYSTEMS, max_length=5)
     position       = models.CharField(choices=SSPOSTS, max_length=5)
 
@@ -116,7 +115,7 @@ class NonTechnical(models.Model):
 
     objects        = models.Manager()
 
-    member         = models.ForeignKey(Student, on_delete=models.CASCADE, unique=True)
+    member         = models.OneToOneField(Student, on_delete=models.CASCADE, unique=True)
     team           = models.CharField(choices=NONTECH, max_length=4)
     position       = models.CharField(choices=NPOST,default='None', max_length=5)
 
