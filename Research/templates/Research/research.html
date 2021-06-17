@@ -1,21 +1,39 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2>
-    IAC Papers
-</h2>
-{% regroup papers by year as years %}
+<section id="One" class="wrapper style3" >
+    <div class="inner">
+        <header class="align-center">
+            <p>Research is the base of development</p>
+            <h2>Research Papers</h2>
+        </header>
+    </div>
+</section>
 
-{% for year in years %}
-<h3>{{ year.grouper }}</h3>
-<ul>
-    {% for paper in year.list %}
-    <li>
-        <p>{{ paper.title }} | {{ paper.author.name }} | {{ paper.conference }}</p><br>
-        <p>{{ paper.abstract }}</p>
-    </li>
-    {% endfor %}
-</ul>
-{% endfor %}
+<section id="three" class="wrapper style2">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div class="inner">
+        <header class="align-center">
+            <h2>IAC Papers</h2><hr>
+        </header>
+            {% regroup papers by year as years %}
 
+            {% for year in years %}
+                <h2>{{ year.grouper }}</h2><hr>
+                <ul>
+                {% for paper in year.list %}
+                <li>
+                    <h3>Title : {{ paper.title }}</h3> 
+                    <h4 style="color: rgb(182, 182, 182);">Author : {{ paper.author.name }}</h4>
+                    <h4 style="color: rgb(182, 181, 182);"> Conference : {{ paper.conference }}</h4><br>
+                    <h3>Abstract:</h3>
+                    <p>{{ paper.abstract }}</p>
+                </li><br>
+                {% endfor %}
+                </ul>
+            {% endfor %}
+    </div>
+</section>
 {% endblock content %}
