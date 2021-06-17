@@ -80,9 +80,9 @@
                     {% endfor %}
             </div>
     </div>
-    </section>
+</section>
 
-    <section id="three" class="wrapper style2">
+<section id="three" class="wrapper style2">
     <div id="stars"></div>
     <div id="stars2"></div>
     <div id="stars3"></div>
@@ -199,38 +199,7 @@
                 {% endfor %}
              </div>
 
+        </div>
 
-                <!--<h3 style="text-align: center;" data-aos="fade-up">Technical</h3><hr>
-                {% regroup tech by subsystem as team_list %}
-                {% for t in team_list %} 
-                <button class="accordion">{{ t.grouper }}</button>
-                <div class="container panel">
-                   
-                    <div class="panel__wrapper-icon mb-100 brk-library-rendered" data-brk-library="component__panel">
-                        {% for m in t.list %}
-                            {% if m.position != "None" %}
-                                <div class="panel__head all-light"><img src="{{ m.member.image }}" alt="" />
-                                    <h4 class="head">{{ m.member.name }}</h4>
-                                    <p class="headpost">{{ m.position }}</p>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-
-                        {% for m in t.list %}
-                            <ul class="panel__list">
-                                {% if m.position == "None" %}
-                                <li>
-                                    <span class="line"></span>
-                                    <i class="icon far fa-gem"></i>{{ m.member.name }}
-                                </li>
-                                {% endif %}								
-                                </ul>
-                        {% endfor %}   
-                    </div>
-                    
-                </div>
-                {% endfor %}-->
-            </div>
-
-        </section>
+</section>
 {% endblock content %}
