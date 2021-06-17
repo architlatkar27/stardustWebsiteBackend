@@ -10,7 +10,8 @@ class Student(models.Model):
         #("PS", "Project Supervisor"),
         ("MM", "Mission Manager"),
         ("MD", "Mission Director"),
-        ("TM", "Team Manager")
+        ("TM", "Team Manager"),
+        ("NH","Non-Technical Head")
         #("MS", "Mission Supervisor"),
         #("OH", "Operation Head"),
     ) 
@@ -18,7 +19,6 @@ class Student(models.Model):
     STATUS = (
         ('F', "Founder"),
         ('C', "Core Member"),
-        ('M', "Member")
     ) 
     DEPT = (
         ("CSE", "Computer Science and Engineering"),
@@ -42,13 +42,13 @@ class Student(models.Model):
     name           = models.CharField(max_length=60, blank=False, primary_key=True)
     branch         = models.CharField(max_length=40, choices = DEPT)
     # year           = models.IntegerField()
-    email          = models.EmailField()
-    linkedin       = models.URLField()
+    email          = models.EmailField(null= True,blank=True)
+    linkedin       = models.URLField(null= True,blank=True)
     # phone          = models.IntegerField()
     image          = models.ImageField(null=True, blank=True, upload_to='student_photo/')
     status         = models.CharField(null=True, blank=True, max_length=10, choices=STATUS)
     is_active      = models.BooleanField(default=True)
-    core_position  = models.CharField(choices=COREPOSTS, max_length=4, null=True, blank=True)
+    core_position  = models.CharField(choices=COREPOSTS, default='None',max_length=4, null=True, blank=True)
     rank           = models.IntegerField(null=True)
 
     def save(self, *args, **kwargs):
@@ -73,9 +73,10 @@ class Technical(models.Model):
         ("ODHS", "ODHS"),
         ("GC", "Communication"),
         ("STR", "Structure and Thermal"),
+        ("ROC","Rocketry")
     )
     SSPOSTS = (
-        #("None", "None"),
+        ("None", "None"),
         ("SSH", "Subsystem Head"),
         ("CSE", "Chief System Engineer"),
         ("SE", "System Engineer"),
@@ -84,39 +85,45 @@ class Technical(models.Model):
 
     objects        = models.Manager()
 
-    member         = models.ForeignKey(Student, on_delete=models.CASCADE, unique=True)
+    member         = models.OneToOneField(Student, on_delete=models.CASCADE, unique=True)
     subsystem      = models.CharField(choices=SUBSYSTEMS, max_length=5)
     position       = models.CharField(choices=SSPOSTS, max_length=5)
 
     def __str__(self):
-        pass
+        return self.member.name #+ self.subsystem
     
     def save(self, *args, **kwargs):
-        pass
+        super().save(*args, **kwargs)
 
 
 
 class NonTechnical(models.Model):
     
     NONTECH = (
-        ("WEB","Website"),
+        ("WEB","Website and Design"),
         ("SPR","Public Relations and Sponsorship"),
         #("SP","Sponsorship"),
         ("SM","Social Media"),
         ("DOC","Documentation"),
-        ("FIN","Finance")
+    )
+
+    NPOST = (
+        ("None", "None"),
+        ("H", "Head"),
+        ("SH","Sub Head")
     )
 
     objects        = models.Manager()
 
-    member         = models.ForeignKey(Student, on_delete=models.CASCADE, unique=True)
+    member         = models.OneToOneField(Student, on_delete=models.CASCADE, unique=True)
     team           = models.CharField(choices=NONTECH, max_length=4)
+    position       = models.CharField(choices=NPOST,default='None', max_length=5)
 
     def __str__(self):
-        pass
+        return self.member.name
 
     def save(self, *args, **kwargs):
-        pass
+        super().save(*args, **kwargs)
 
 
 class Faculty(models.Model):
