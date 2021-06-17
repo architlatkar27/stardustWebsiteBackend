@@ -2,6 +2,10 @@
 {% block content %}
 {% load static %}
 
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
 <!--Please try to shorten the founders section. Its too big. Even the core section as a matter of fact--><!--done-->
 <!--And how many time faculty coordinators XD--><!--done-->
 <!--Also no mention of other subsystem members and non technical team??--><!--done-->
@@ -47,30 +51,34 @@
         </p>
         <h2 data-aos="fade-down">The Founders</h2>
         </header>
-        <div class="gallery team">
-            {% for f in founders %}
-            <div  data-aos="fade-up">
-                <!--<div class="flip-card-inner">-->
-                    <div class="image fit team">
-                        <a href="#"><img src="{{ f.image.url }}" alt="" /></a><br>
-                        <h3>{{ f.name }}</h3>
-                        <p>Founder</p>
-                        <ul class="social-icons hide">
-                            <li><a class="mail" href="{{ f.email }}"><i class="fa fa-envelope"></i></a></li>
-                            <li><a class="linkedin" href="{{ f.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
-                        </ul>
-                    </div>
-                <!--<div class="image fit flip-card-back">
-                    <h3>{{ f.name }}</h3>
-                    <p>Founder</p>
-                    <ul class="social-icons">
-                        <li><a class="mail" href="{{ f.email }}"><i class="fa fa-envelope"></i></a></li>
-                        <li><a class="linkedin" href="{{ f.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
-                    </ul>
+        <!--Added one outer div of class container
+				    removed the replaced the class gallery with row-->
+			<div class="container">
+                <div class="row team">
+                    {% for f in founders %}
+                    <div  data-aos="fade-up" class="col-lg-4 col-md-6 col-sm-12 aos-init aos-animate">
+                        <!--<div class="flip-card-inner">-->
+                            <div class="image fit team">
+                                <a href="#"><img src="{{ f.image.url }}" alt="" /></a><br>
+                                <h3>{{ f.name }}</h3>
+                                <p>Founder</p>
+                                <ul class="social-icons hide">
+                                    <li><a class="mail" href="{{ f.email }}"><i class="fa fa-envelope"></i></a></li>
+                                    <li><a class="linkedin" href="{{ f.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
+                                </ul>
+                            </div>
+                        <!--<div class="image fit flip-card-back">
+                            <h3>{{ f.name }}</h3>
+                            <p>Founder</p>
+                            <ul class="social-icons">
+                                <li><a class="mail" href="{{ f.email }}"><i class="fa fa-envelope"></i></a></li>
+                                <li><a class="linkedin" href="{{ f.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
+                            </ul>
+                        </div>
+                    </div>-->
                 </div>
-            </div>-->
-        </div>
-            {% endfor %}
+                    {% endfor %}
+            </div>
     </div>
     </section>
 
@@ -84,30 +92,33 @@
            </p>
             <h2>The Core</h2>
             </header>
-            <div class="gallery team">
-                {% for c in core %}
-                <div data-aos="fade-up">
-                    <!--<div class="flip-card-inner">-->
-                        <div class="image fit team">
-                            <img src="{{ c.image.url }}" alt="" /><br>
-                            <h3>{{ c.name }}</h3>
-                            <p>{{ c.get_core_position_display }}</p>
-                            <ul class="social-icons hide">
-                                <li><a class="mail" href="mailto:{{ c.email }}"><i class="fa fa-envelope"></i></a></li>
-                                <li><a class="linkedin" href="{{ c.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
-                            </ul>
-                        </div>
-                        <!--<div class="image fit flip-card-back">
-                            <h3>{{ c.name }}</h3>
-                            <p>{{ c.post }}</p>
-                            <ul class="social-icons hide">
-                                <li><a class="mail" href="mailto:{{ c.email }}"><i class="fa fa-envelope"></i></a></li>
-                                <li><a class="linkedin" href="{{ c.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
-                            </ul>
-                        </div>
-                    </div>-->
-                </div>
-                {% endfor %}
+            <!--Added one outer div of class container
+				    removed the replaced the class gallery with row-->
+			<div class="container">
+                <div class="row team">
+                    {% for c in core %}
+                    <div data-aos="fade-up" class="col-lg-4 col-md-6 col-sm-12 aos-init aos-animate">
+                        <!--<div class="flip-card-inner">-->
+                            <div class="image fit team">
+                                <img src="{{ c.image.url }}" alt="" /><br>
+                                <h3>{{ c.name }}</h3>
+                                <p>{{ c.get_core_position_display }}</p>
+                                <ul class="social-icons hide">
+                                    <li><a class="mail" href="mailto:{{ c.email }}"><i class="fa fa-envelope"></i></a></li>
+                                    <li><a class="linkedin" href="{{ c.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
+                                </ul>
+                            </div>
+                            <!--<div class="image fit flip-card-back">
+                                <h3>{{ c.name }}</h3>
+                                <p>{{ c.post }}</p>
+                                <ul class="social-icons hide">
+                                    <li><a class="mail" href="mailto:{{ c.email }}"><i class="fa fa-envelope"></i></a></li>
+                                    <li><a class="linkedin" href="{{ c.linkedin }}"><i class="fa fa-linkedin"></i></a></li>   
+                                </ul>
+                            </div>
+                        </div>-->
+                    </div>
+                    {% endfor %}
             </div>
         </div>
     </section>
