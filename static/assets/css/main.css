@@ -4744,6 +4744,11 @@ h2 a:hover {
   font-size: 1.8rem;
   text-shadow: 2px 2px rgb(65, 58, 58);
 }
+@media (max-width: 562px){
+  #subp{
+    font-size: 1.4rem;
+  }
+}
 
 .wrap:hover #slide1 {
   transition: 1s;
@@ -5069,9 +5074,9 @@ h2 a:hover {
   top: 50%;
   transform: translate(0,-50%);
 }
-.panel__wrapper-icon .panel__list li {
+/*.panel__wrapper-icon .panel__list li {
   padding-left: 110px;
-}
+}*/
 .panel__wrapper-icon .panel__list li:hover .icon {
   opacity: 1;
   
