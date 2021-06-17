@@ -287,5 +287,4 @@ zict==2.0.0
 zipp @ file:///tmp/build/80754af9/zipp_1604001098328/work
 zope.event==4.5.0
 zope.interface==5.1.0
-certifi==2021.5.30
 wincertstore==0.2
