@@ -6,9 +6,10 @@ class ResearchPaper(models.Model):
 
     objects        = models.Manager()
 
-    file           = models.FileField(upload_to="research/", null=True, blank=True)
+    
     title          = models.CharField(max_length=250, null=False, blank=False)
     year           = models.IntegerField(null=False, blank=False)
     author         = models.ForeignKey(Student, on_delete=models.PROTECT, related_name="author")
     conference     = models.CharField(max_length=200, null=False, blank=False)
-    abstract       = models.TextField(max_length=1000, null=False, blank=False)  
+    abstract       = models.TextField(max_length=1000, null=False, blank=False)
+    pdf_link       = models.URLField(null=False, blank=False,default='None')  
