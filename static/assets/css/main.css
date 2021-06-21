@@ -4690,7 +4690,7 @@ h2 a:hover {
     width: 80vw;
   }
 }
-/*@media screen and (max-width: 640px) {
+/*f@media screen and (max-width: 640px) {
   #subimg {
     height: 80%;
   }
@@ -4741,11 +4741,11 @@ h2 a:hover {
   font-size: 1.8rem;
   text-shadow: 2px 2px rgb(65, 58, 58);
 }
-@media (max-width: 562px){
+/* @media (max-width: 562px){
   #subp{
     font-size: 1.4rem;
   }
-}
+} */
 
 .wrap:hover #slide1 {
   transition: 1s;
