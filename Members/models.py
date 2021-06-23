@@ -11,7 +11,8 @@ class Student(models.Model):
         ("MM", "Mission Manager"),
         ("MD", "Mission Director"),
         ("TM", "Team Manager"),
-        ("NH","Non-Technical Head")
+        ("RH", "Rocketry Head"),
+        ("NH","Non-Technical Head"),
         #("MS", "Mission Supervisor"),
         #("OH", "Operation Head"),
     ) 
@@ -69,7 +70,7 @@ class Technical(models.Model):
         #("None", "None"),
         ("PL", "Payload"),
         ("ADCS", "ADCS"),
-        ("EPS", "Power"),
+        ("EPS", "Electrical Power System"),
         ("ODHS", "ODHS"),
         ("GC", "Communication"),
         ("STR", "Structure and Thermal"),
@@ -110,7 +111,8 @@ class NonTechnical(models.Model):
     NPOST = (
         ("None", "None"),
         ("H", "Head"),
-        ("SH","Sub Head")
+        ("SH","Sub Head"),
+        ("M","Member")
     )
 
     objects        = models.Manager()
