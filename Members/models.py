@@ -68,12 +68,12 @@ class Technical(models.Model):
     
     SUBSYSTEMS = (
         #("None", "None"),
-        ("PL", "Payload"),
-        ("ADCS", "ADCS"),
-        ("EPS", "Electrical Power System"),
-        ("ODHS", "ODHS"),
-        ("GC", "Communication"),
-        ("STR", "Structure and Thermal"),
+        ("PL", "Payload Subsystem"),
+        ("ADCS", "Attitude Determination and Control Subsystem"),
+        ("EPS", "Electrical Power System Subsystem"),
+        ("ODHS", "On Board Data Handling Susbsytem"),
+        ("GC", "Ground Control and Communication Subsystem"),
+        ("STR", "Structures and Thermal Susbsystem"),
         ("ROC","Rocketry")
     )
     SSPOSTS = (
