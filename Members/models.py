@@ -48,7 +48,7 @@ class Student(models.Model):
     linkedin       = models.URLField(null= True,blank=True)
     # phone        = models.IntegerField()
     #image         = models.ImageField(null=True, blank=True, upload_to='student_photo/')
-    image          = CloudinaryField('image',null=True, blank=True, upload_to='student_photo/')
+    image          = CloudinaryField('image',null=True, blank=True)
     status         = models.CharField(null=True, blank=True, max_length=10, choices=STATUS)
     is_active      = models.BooleanField(default=True)
     core_position  = models.CharField(choices=COREPOSTS, default='None',max_length=4, null=True, blank=True)
@@ -156,7 +156,7 @@ class Faculty(models.Model):
     )
     
     #image         = models.ImageField(null=True, blank=True, upload_to = 'faculty_photo/')
-    image          = CloudinaryField('image',null=True, blank=True, upload_to = 'faculty_photo/')
+    image          = CloudinaryField('image',null=True, blank=True)
     name          = models.CharField(null=False, blank=False, primary_key=True, max_length=60)
     position      = models.CharField(null=False, blank=False, choices=POST, max_length=40)
     dept          = models.CharField(null=False, blank=False, choices=DEPT, max_length=40)
