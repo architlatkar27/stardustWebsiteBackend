@@ -101,10 +101,10 @@ class Technical(models.Model):
 
 class Rocketry(models.Model):
     
-    ROCSYSTEMS = (
+    SUBSYSTEMS = (
         #("None", "None"),
         ("AS", "Aerodynamics and Structures"),
-        ("GCS", "Ground and Control System"),
+        ("GCS", "Guidance and Control System"),
         ("PS", "Propulsion System")
     )
     RPOSTS = (
@@ -118,7 +118,7 @@ class Rocketry(models.Model):
     objects        = models.Manager()
 
     member         = models.OneToOneField(Student, on_delete=models.CASCADE, unique=True)
-    rocsystem      = models.CharField(choices=ROCSYSTEMS, max_length=5)
+    subsystem      = models.CharField(choices=SUBSYSTEMS, max_length=5)
     position       = models.CharField(choices=RPOSTS, max_length=5)
 
     def __str__(self):

@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from Members.models import Student, Technical, NonTechnical
+from Members.models import Student, Technical, Rocketry, NonTechnical
 
 # Create your views here.
 
 def team_view(request):
     context = {}
     tech_members        = Technical.objects.filter(member__is_active=True).order_by("subsystem")
-    roc_members         = Rocketry.objects.filter(member__is_active=True).order_by("rocsystem")
+    roc_members         = Rocketry.objects.filter(member__is_active=True).order_by("subsystem")
     non_tech_members    = NonTechnical.objects.filter(member__is_active=True).order_by("team")
     founders            = Student.objects.filter(status="F").order_by("rank")
     core                = Student.objects.filter(status="C").order_by("rank")

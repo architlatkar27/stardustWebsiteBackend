@@ -169,7 +169,7 @@
                 <br><br>
 
                 <h3 style="text-align: center;" data-aos="fade-up">Rocketry</h3><hr>
-                {% regroup roc by get_rocsystem_display as team_list %}
+                {% regroup roc by get_subsystem_display as team_list %}
                 {% for t in team_list %} 
                 <button class="accordion">{{ t.grouper }}</button>
                 <div class="container panel">
