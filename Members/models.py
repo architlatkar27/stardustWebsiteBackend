@@ -75,8 +75,7 @@ class Technical(models.Model):
         ("EPS", "Electrical Power System Subsystem"),
         ("ODHS", "On Board Data Handling Susbsytem"),
         ("GC", "Ground Control and Communication Subsystem"),
-        ("STR", "Structures and Thermal Susbsystem"),
-        ("ROC","Rocketry")
+        ("STR", "Structures and Thermal Susbsystem")
     )
     SSPOSTS = (
         ("None", "None"),
@@ -91,6 +90,36 @@ class Technical(models.Model):
     member         = models.OneToOneField(Student, on_delete=models.CASCADE, unique=True)
     subsystem      = models.CharField(choices=SUBSYSTEMS, max_length=5)
     position       = models.CharField(choices=SSPOSTS, max_length=5)
+
+    def __str__(self):
+        return self.member.name #+ self.subsystem
+    
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+
+
+class Rocketry(models.Model):
+    
+    ROCSYSTEMS = (
+        #("None", "None"),
+        ("AS", "Aerodynamics and Structures"),
+        ("GCS", "Ground and Control System"),
+        ("PS", "Propulsion System"))
+    )
+    RPOSTS = (
+        ("None", "None"),
+        ("SSH", "Subsystem Head"),
+        ("CSE", "Chief System Engineer"),
+        ("SE", "System Engineer"),
+        ("SSE", "Subsystem Engineer")
+    )
+
+    objects        = models.Manager()
+
+    member         = models.OneToOneField(Student, on_delete=models.CASCADE, unique=True)
+    rocsystem      = models.CharField(choices=ROCSYSTEMS, max_length=5)
+    position       = models.CharField(choices=RPOSTS, max_length=5)
 
     def __str__(self):
         return self.member.name #+ self.subsystem
