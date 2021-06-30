@@ -39,16 +39,16 @@ class Student(models.Model):
     
     objects        = models.Manager()
 
-    # sdid           = models.CharField(max_length=8, primary_key=True, default="sd00de01")
-    # usn            = models.CharField(max_length=10, unique=True, blank=False)
+    # sdid         = models.CharField(max_length=8, primary_key=True, default="sd00de01")
+    # usn          = models.CharField(max_length=10, unique=True, blank=False)
     name           = models.CharField(max_length=60, blank=False, primary_key=True)
     branch         = models.CharField(max_length=40, choices = DEPT)
-    # year           = models.IntegerField()
+    # year         = models.IntegerField()
     email          = models.EmailField(null= True,blank=True)
     linkedin       = models.URLField(null= True,blank=True)
-    # phone          = models.IntegerField()
-    #image          = models.ImageField(null=True, blank=True, upload_to='student_photo/')
-    image            = CloudinaryField('image',null=True, blank=True)
+    # phone        = models.IntegerField()
+    #image         = models.ImageField(null=True, blank=True, upload_to='student_photo/')
+    image          = CloudinaryField('image',null=True, blank=True, upload_to='student_photo/')
     status         = models.CharField(null=True, blank=True, max_length=10, choices=STATUS)
     is_active      = models.BooleanField(default=True)
     core_position  = models.CharField(choices=COREPOSTS, default='None',max_length=4, null=True, blank=True)
@@ -155,7 +155,8 @@ class Faculty(models.Model):
         ("VF", "Visiting Faculty"),
     )
     
-    image         = models.ImageField(null=True, blank=True, upload_to = 'faculty_photo/')
+    #image         = models.ImageField(null=True, blank=True, upload_to = 'faculty_photo/')
+    image          = CloudinaryField('image',null=True, blank=True, upload_to = 'faculty_photo/')
     name          = models.CharField(null=False, blank=False, primary_key=True, max_length=60)
     position      = models.CharField(null=False, blank=False, choices=POST, max_length=40)
     dept          = models.CharField(null=False, blank=False, choices=DEPT, max_length=40)
