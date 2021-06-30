@@ -105,7 +105,7 @@ class Rocketry(models.Model):
         #("None", "None"),
         ("AS", "Aerodynamics and Structures"),
         ("GCS", "Ground and Control System"),
-        ("PS", "Propulsion System"))
+        ("PS", "Propulsion System")
     )
     RPOSTS = (
         ("None", "None"),
