@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 import re
 # Create your models here.
 class Student(models.Model):
@@ -46,7 +47,8 @@ class Student(models.Model):
     email          = models.EmailField(null= True,blank=True)
     linkedin       = models.URLField(null= True,blank=True)
     # phone          = models.IntegerField()
-    image          = models.ImageField(null=True, blank=True, upload_to='student_photo/')
+    #image          = models.ImageField(null=True, blank=True, upload_to='student_photo/')
+    image            = CloudinaryField('image',null=True, blank=True)
     status         = models.CharField(null=True, blank=True, max_length=10, choices=STATUS)
     is_active      = models.BooleanField(default=True)
     core_position  = models.CharField(choices=COREPOSTS, default='None',max_length=4, null=True, blank=True)
