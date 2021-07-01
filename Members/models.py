@@ -90,6 +90,7 @@ class Technical(models.Model):
     member         = models.OneToOneField(Student, on_delete=models.CASCADE, unique=True)
     subsystem      = models.CharField(choices=SUBSYSTEMS, max_length=5)
     position       = models.CharField(choices=SSPOSTS, max_length=5)
+    rank           = models.IntegerField(default=1,blank=False)
 
     def __str__(self):
         return self.member.name #+ self.subsystem
@@ -120,6 +121,7 @@ class Rocketry(models.Model):
     member         = models.OneToOneField(Student, on_delete=models.CASCADE, unique=True)
     subsystem      = models.CharField(choices=SUBSYSTEMS, max_length=5)
     position       = models.CharField(choices=RPOSTS, max_length=5)
+    rank           = models.IntegerField(default=1,blank=False)
 
     def __str__(self):
         return self.member.name #+ self.subsystem
@@ -151,6 +153,7 @@ class NonTechnical(models.Model):
     member         = models.OneToOneField(Student, on_delete=models.CASCADE, unique=True)
     team           = models.CharField(choices=NONTECH, max_length=4)
     position       = models.CharField(choices=NPOST,default='None', max_length=5)
+    rank           = models.IntegerField(default=1,blank=False)
 
     def __str__(self):
         return self.member.name
