@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 import re
 # Create your models here.
 class Student(models.Model):
@@ -11,7 +12,8 @@ class Student(models.Model):
         ("MM", "Mission Manager"),
         ("MD", "Mission Director"),
         ("TM", "Team Manager"),
-        ("NH","Non-Technical Head")
+        ("RH", "Rocketry Head"),
+        ("NH","Non-Technical Head"),
         #("MS", "Mission Supervisor"),
         #("OH", "Operation Head"),
     ) 
@@ -37,15 +39,16 @@ class Student(models.Model):
     
     objects        = models.Manager()
 
-    # sdid           = models.CharField(max_length=8, primary_key=True, default="sd00de01")
-    # usn            = models.CharField(max_length=10, unique=True, blank=False)
+    # sdid         = models.CharField(max_length=8, primary_key=True, default="sd00de01")
+    # usn          = models.CharField(max_length=10, unique=True, blank=False)
     name           = models.CharField(max_length=60, blank=False, primary_key=True)
     branch         = models.CharField(max_length=40, choices = DEPT)
-    # year           = models.IntegerField()
+    # year         = models.IntegerField()
     email          = models.EmailField(null= True,blank=True)
     linkedin       = models.URLField(null= True,blank=True)
-    # phone          = models.IntegerField()
-    image          = models.ImageField(null=True, blank=True, upload_to='student_photo/')
+    # phone        = models.IntegerField()
+    #image         = models.ImageField(null=True, blank=True, upload_to='student_photo/')
+    image          = CloudinaryField('image',null=True, blank=True)
     status         = models.CharField(null=True, blank=True, max_length=10, choices=STATUS)
     is_active      = models.BooleanField(default=True)
     core_position  = models.CharField(choices=COREPOSTS, default='None',max_length=4, null=True, blank=True)
@@ -67,13 +70,12 @@ class Technical(models.Model):
     
     SUBSYSTEMS = (
         #("None", "None"),
-        ("PL", "Payload"),
-        ("ADCS", "ADCS"),
-        ("EPS", "Power"),
-        ("ODHS", "ODHS"),
-        ("GC", "Communication"),
-        ("STR", "Structure and Thermal"),
-        ("ROC","Rocketry")
+        ("PL", "Payload Subsystem"),
+        ("ADCS", "Attitude Determination and Control Subsystem"),
+        ("EPS", "Electrical Power System Subsystem"),
+        ("ODHS", "On Board Data Handling Susbsytem"),
+        ("GC", "Ground Control and Communication Subsystem"),
+        ("STR", "Structures and Thermal Susbsystem")
     )
     SSPOSTS = (
         ("None", "None"),
@@ -97,6 +99,36 @@ class Technical(models.Model):
 
 
 
+class Rocketry(models.Model):
+    
+    SUBSYSTEMS = (
+        #("None", "None"),
+        ("AS", "Aerodynamics and Structures"),
+        ("GCS", "Guidance and Control System"),
+        ("PS", "Propulsion System")
+    )
+    RPOSTS = (
+        ("None", "None"),
+        ("SSH", "Subsystem Head"),
+        ("CSE", "Chief System Engineer"),
+        ("SE", "System Engineer"),
+        ("SSE", "Subsystem Engineer")
+    )
+
+    objects        = models.Manager()
+
+    member         = models.OneToOneField(Student, on_delete=models.CASCADE, unique=True)
+    subsystem      = models.CharField(choices=SUBSYSTEMS, max_length=5)
+    position       = models.CharField(choices=RPOSTS, max_length=5)
+
+    def __str__(self):
+        return self.member.name #+ self.subsystem
+    
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+
+
 class NonTechnical(models.Model):
     
     NONTECH = (
@@ -110,7 +142,8 @@ class NonTechnical(models.Model):
     NPOST = (
         ("None", "None"),
         ("H", "Head"),
-        ("SH","Sub Head")
+        ("SH","Sub Head"),
+        ("M","Member")
     )
 
     objects        = models.Manager()
@@ -151,7 +184,8 @@ class Faculty(models.Model):
         ("VF", "Visiting Faculty"),
     )
     
-    image         = models.ImageField(null=True, blank=True, upload_to = 'faculty_photo/')
+    #image         = models.ImageField(null=True, blank=True, upload_to = 'faculty_photo/')
+    image          = CloudinaryField('image',null=True, blank=True)
     name          = models.CharField(null=False, blank=False, primary_key=True, max_length=60)
     position      = models.CharField(null=False, blank=False, choices=POST, max_length=40)
     dept          = models.CharField(null=False, blank=False, choices=DEPT, max_length=40)

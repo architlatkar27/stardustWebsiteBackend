@@ -14,6 +14,10 @@ import os
 import django_heroku
 import dj_database_url
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -39,6 +43,7 @@ INSTALLED_APPS = [
     'Members',
     'Research',
     'other',
+    'cloudinary',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -138,3 +143,15 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+# Heroku: Update database configuration from $DATABASE_URL.
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+# adding config
+cloudinary.config( 
+  cloud_name = "dbyla3dm1", 
+  api_key = "597978696241836", 
+  api_secret = "glXBQxsUUBb5T38d1JJHehYjv8E" 
+)
