@@ -2860,9 +2860,11 @@ ul {
   margin: 0 0 2rem 0;
   padding-left: 1rem;
 }
-
-ul li {
+ul li{
   padding-left: 0.5rem;
+}
+li.research-li{
+  background-color: rgba(0,0,0,0.4);
 }
 
 ul.alt {
@@ -3054,7 +3056,7 @@ header p {
 /* Wrapper */
 
 .wrapper {
-  padding: 6rem 0 4rem 0;
+  padding: 4rem 0 4rem 0;
   position: relative;
   margin: 0;
 }
@@ -4828,7 +4830,8 @@ h2 a:hover {
   border: none;
   text-align: center;
   outline: none;
-  font-size: 18px;
+  font-size: 1.1rem;
+  font-weight: 400;
   transition: 0.4s;
   border-color: #fff ;
 }
@@ -4864,18 +4867,19 @@ h2 a:hover {
 }
 
 .head{
-  padding-left: 4rem;
-  font-size: 1.4rem;
+  
+  font-size: 1.1rem;
 }
 .headpost{
-  text-align: right;
-  padding-right: 20rem;
+  text-align: center;
   padding-top: 1rem;
+  
+  
 }
 
 .panel__wrapper-icon .panel__head {
-  background: linear-gradient(to right,#515152,#0c0c0c);
-  padding: 24px 40px;
+  background: rgba(0,0,0,0.9);
+  padding: 30px 40px;
   box-shadow: 0 6px 30px 0 rgba(0,0,0,.12);
   color: rgba(255,255,255,.9);
 }
@@ -4887,8 +4891,7 @@ h2 a:hover {
     /*text-align: center !important;*/
   }
   .headpost{
-    text-align: left;
-    padding-right: 30rem;
+    text-align: center;
     padding-top: 0.6rem;
     font-size: 0.9rem;
   }
@@ -4920,7 +4923,6 @@ h2 a:hover {
 
 @media (min-width: 992px){
   .panel__wrapper-icon .panel__head {
-      display: flex;
       align-items: center;
   }
 }
@@ -4928,12 +4930,8 @@ h2 a:hover {
 @media (min-width: 992px){
   .panel__wrapper-icon .panel__head p {
       margin-top: 0;
-      margin-left: 58px;
   }
-  .panel__wrapper-icon .panel__head p {
-      flex: 1;
-      margin-top: 20px;
-  }
+  
 }
 
 .panel__head, .panel__list {
@@ -5031,11 +5029,10 @@ h2 a:hover {
 
 .panel__wrapper-icon .panel__head p {
   margin-top: 0;
-  margin-left: 58px;
+
 }
 
 .panel__wrapper-icon .panel__head {
-  display: flex;
   align-items: center;
 }
 
