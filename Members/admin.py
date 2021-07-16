@@ -16,8 +16,8 @@ class RocketryAdmin(admin.ModelAdmin):
     search_fields = ['subsystem', 'position', 'member__name']
 
 class NonTechAdmin(admin.ModelAdmin):
-    list_display = ('team', 'member')
-    search_fields = ['team', 'member__name']
+    list_display = ('team','position', 'member')
+    search_fields = ['team','position', 'member__name']
 
 class FacultyAdmin(admin.ModelAdmin):
     list_display = ('name', 'dept', 'position')
