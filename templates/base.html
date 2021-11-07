@@ -7,10 +7,11 @@
     <link
       rel="icon"
       type="image/png"
-      href="{% static 'images/logo black.png' %}"
+      
+      href="{% static 'images/logo black updated.png' %}"
     />
     <meta charset="utf-8" />
-    <meta name="description" content="Satellite Team Stardust RIT" />
+    <meta name="description" content="Space Team Stardust RIT" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-site-verification" content="FJ4BV-nFA_gxxbx_ld4Vi4tkJt3zxAOaPUlLhWIXdp0" />
     
@@ -20,8 +21,7 @@
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
       rel="stylesheet"
       type="text/css"
     />
@@ -35,13 +35,19 @@
       <div class="logo">
         <a href="{% url 'other:home' %}">
           <img
-            src="{% static 'images/logo.png' %}"
-            width="85px"
-            height="85px"
+            src="{% static 'images/final logo white.svg' %}"
+            width="70px"
+            height="70px"
           />
         </a>
       </div>
-      <a href="#menu">Menu</a>
+      <a href="#menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+        </div>  
+      </a>
+      
     </header>
 
     <!-- Nav -->
@@ -63,14 +69,14 @@
     {% endblock content %}
 
 
-      <!-- Site footer -->
+    <!-- Site footer -->
     <footer id="footer" class="site-footer">
     <div class="container">
         <div class="row">
         <div class="col-sm-12">
             <h6>S.T.A.R.D.U.ST</h6>
             <p class="text-justify">
-            Satellite Technology And Research Division Under Students
+            Space Technology And Research Division Under Students
             <i>S.T.A.R.D.U.ST </i> was founded in 2019 by a group of 3rd year
             UG students at Ramaiah Institute of Technology with a clear
             objective of designing and building a 2U Cubesat having a novel
@@ -80,8 +86,21 @@
             <a href="http://msrit.edu/department/ece.html">
             <img src="{% static 'images/logo-dark.png' %}" width="300px" class="dark"
             /></a>
-            <p><a href="{% url 'other:contact' %}">Contact Us</a></p>
-            <button id="scrollToTopBtn">🚀</button>
+
+            <hr>
+            
+            <!-- added for navigation bar -->
+            <ul class="footer-links"> 
+              <li><a href="{% url 'other:home' %}">Home</a></li>
+              <li><a href="{% url 'Achievements:achievements' %}">Achievements and Workshops</a></li>
+              <li><a href="{% url 'Research:research' %}">Research</a></li>
+              <li><a href="{% url 'Members:team' %}">The Team</a></li>
+              <li><a href="{% url 'other:subsystems' %}">Subsystems</a></li>
+              <li><a href="{% url 'other:contact' %}">Contact Us</a></li>
+            </ul>
+            <!-- <p><a href="{% url 'other:contact' %}">Contact Us</a></p> -->
+            <!-- <button id="scrollToTopBtn"></button> -->
+            <button id="scrollToTopBtn"><i class="fas fa-rocket"></i></button>
         </div>
         </div>
         <hr />
@@ -129,6 +148,7 @@
     <script src="{% static "assets/js/skel.min.js" %}"></script>
     <script src="{% static "assets/js/util.js" %}"></script>
     <script src="{% static "assets/js/main.js" %}"></script>
+    <script src="https://kit.fontawesome.com/8490858693.js" crossorigin="anonymous"></script>
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 			<script>AOS.init();</script>
 </body>

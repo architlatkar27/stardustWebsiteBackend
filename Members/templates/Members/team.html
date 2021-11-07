@@ -15,8 +15,10 @@
   <section id="One" class="wrapper style3" >
     <div class="inner">
         <header class="align-center">
-            <p>One team,One mission</p>
+            <!-- swapped h2 and p -->
             <h2>The Team</h2>
+            <hr>
+            <p>One team,One mission</p>
         </header>
     </div>
 </section>
@@ -152,14 +154,22 @@
                         {% endfor %}
 
                         {% for m in t.list %}
-                            <ul class="panel__list">
+                            <!-- <ul class="panel__list">
                                 {% if m.position == "None" %}
                                 <li>
                                     <span class="line"></span>
                                     <i class="icon far fa-gem"></i>{{ m.member.name }}
                                 </li>
                                 {% endif %}								
-                                </ul>
+                            </ul> -->
+                            <ul class="panel__list">
+                                {% if m.position == "None" %}
+                                <li>
+                                    <span class="line"></span>
+                                    <i class="icon far fa-gem"></i>{{ m.member.name }}
+                                </li>
+                                {% endif %}
+                            </ul>
                         {% endfor %}   
                     </div>
                     
@@ -189,7 +199,7 @@
                                 {% if m.position == "None" %}
                                 <li>
                                     <span class="line"></span>
-                                    <i class="icon far fa-gem"></i>{{ m.member.name }}
+                                    <i class=""></i>{{ m.member.name }}
                                 </li>
                                 {% endif %}								
                                 </ul>

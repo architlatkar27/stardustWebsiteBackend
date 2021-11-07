@@ -4,8 +4,10 @@
 <section id="One" class="wrapper style3">
     <div class="inner">
       <header class="align-center">
-        <p>Commited to upskill the team</p>
+        <!-- swapped h2 and p -->
         <h2>Achievements and notable workshops</h2>
+        <hr>
+        <p>Commited to upskill the team</p>
       </header>
     </div>
 </section>
@@ -15,7 +17,7 @@
     <div id="stars2"></div>
     <div id="stars3"></div>
     <div class="inner">
-      <div class="gallery achv">
+      <!-- <div class="gallery achv">
         {% for a in achievements %}
         <div class="flip-card">
           <div class="flip-card-inner">
@@ -24,20 +26,40 @@
                 src="{{ a.photo.url }}"
                 alt=""
               /><br>
-              <h2>{{ a.title }}</h2>
+              <h2>{{ a.title }}</h2> -->
               <!--<p>The members gained a first hand experience in building and deploying a mini cansat</p>-->
-            </div>
+            <!-- </div>
             <div class="image fit flip-card-back">
               <h4>{{ a.title }}</h4>
               <p>
                 {{ a.description }}
-              </p>
+              </p> -->
               <!--<a><p style="font-size: large;">Know More!</p></a>-->
-            </div>
+            <!-- </div>
           </div>
         </div>
         {% endfor %}
+      </div> -->
+
+      
+      {% for a in achievements %}
+      <div class="box">
+        <div class="left-box">
+          <h2>{{ a.title }}</h2>
+          {% load static %}
+          <img src="{{ a.photo.url }}" alt="" /><br>
+        </div>
+        <div class="right-box">
+          <h4>{{ a.title }}</h4>
+          <p>
+            {{ a.description }}
+          </p>
+        </div>
       </div>
+      {% endfor %}
+
+
+
     </div>
 </section>
 
