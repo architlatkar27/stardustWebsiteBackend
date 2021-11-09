@@ -2,12 +2,14 @@
 {% block content %}
 {% load static %}
 
+<!-- changed satellite to space -->
+
 <section class="banner full">
     <article>
       <img src="{% static 'images/earth.jpg' %}" alt="" />
       <div class="inner">
         <header>
-          <p>Satellite Technology And Research Division Under Students</p>
+          <p>Space Technology And Research Division Under Students</p>
           <h2>S.T.A.R.D.U.ST</h2>
         </header>
       </div>
@@ -16,7 +18,7 @@
       <img src="{% static 'images/galaxy.jpg' %}" alt="" />
       <div class="inner" data-aos="fade-down">
         <header>
-          <p>Satellite Technology And Research Division Under Students</p>
+          <p>Space Technology And Research Division Under Students</p>
           <h2>S.T.A.R.D.U.ST</h2>
         </header>
       </div>
@@ -25,19 +27,20 @@
       <img src="{% static 'images/nebula.JPG' %}" alt="" />
       <div class="inner">
         <header>
-          <p>Satellite Technology And Research Division Under Students</p>
+          <p>Space Technology And Research Division Under Students</p>
           <h2>S.T.A.R.D.U.ST</h2>
         </header>
       </div>
     </article>
     <article>
-      <img
+      <!-- <img
         src="https://blogs.nasa.gov/spacestation/wp-content/uploads/sites/240/2016/05/blog_iss047e120451.jpg"
         alt=""
-      />
+      /> -->
+      <img src="{% static 'images/4th Image.jpg' %}" alt="" />
       <div class="inner">
         <header>
-          <p>Satellite Technology And Research Division Under Students</p>
+          <p>Space Technology And Research Division Under Students</p>
           <h2>S.T.A.R.D.U.ST</h2>
         </header>
       </div>
@@ -56,7 +59,7 @@
        <h2>About Us</h2>
        <hr />
      </header>
-     <p>
+     <p class="about-content" style="letter-spacing: 2px;">
        Team S.T.A.R.D.U.ST was founded in 2019 under the support and guidance
        of the Department of Electronics and Communication engineering by a
        group of 3rd year UG students at Ramaiah Institute of Technology with
@@ -83,7 +86,7 @@
      </header>-->
      <div class="gallery" data-aos="zoom-in-right">
        <div>
-         <div class="image fit" style="background: linear-gradient(
+         <div class="image fit hover-effect" style="background: linear-gradient(
          to right bottom,
        rgba(0, 0, 0, 2),
        rgba(0, 0, 0, 0.2)
@@ -92,12 +95,12 @@
            <br>
            <p>
              Enhance the skills of undergraduate engineering students by
-             providing hands-on experience for building a small satellite
+             providing hands-on experience for building a small Space
            </p>
          </div>
        </div>
        <div>
-         <div class="image fit" style="background: linear-gradient(
+         <div class="image fit hover-effect" style="background: linear-gradient(
          to right bottom,
        rgba(0, 0, 0, 0.2),
        rgba(0, 0, 0, 2)
@@ -105,7 +108,7 @@
            <h2>Vision</h2>
            <p>
              To successfully design, fabricate and operate an indeginous
-             small satellite with the purpose of providing useful
+             small Space with the purpose of providing useful
              contribution in the field of Space Technology
            </p>
          </div>
@@ -114,17 +117,17 @@
      <br /><br /><br />
 
      <div style="text-align: center" data-aos="fade-up">
-       <img src="{% static 'images/cansat-1.JPG' %}" width="350px" height="315" style="position:relative; z-index: 100;"/>
+       <img src="{% static 'images/cansat-1.JPG' %}" width="350px" height="240" style="position:relative; z-index: 100; margin-right: 20px;"/>
        <iframe
          width="350"
-         height="315"
+         height="240"
          src="https://www.youtube.com/embed/RFXp8EhKVC4"
          frameborder="0"
          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
          allowfullscreen
-         style="position:relative; z-index: 100;border-radius: 12px;"
+         style="position:relative; z-index: 100;border-radius: 12px; margin-right: 20px;"
        ></iframe>
-       <img src="{% static 'images/MS.JPG' %}" width="350px" height="315" style="position:relative; z-index: 100;"/>
+       <img src="{% static 'images/MS.JPG' %}" width="350px" height="240" style="position:relative; z-index: 100; margin-right: 20px;"/>
      </div>
    </div>
  </section>
@@ -145,17 +148,63 @@
         {% for f in faculty %}
        <div>
          <div class="image fit">
-           <img src="{{ f.image.url }}" alt="" /></a><br>
-           <h3>{{ f.name }}</h3>
-           <p>{{ f.get_position_display }}</p>
-           <p>
-             <b>Department of<br />{{ f.dept }}</b>
-           </p>
+          <a href="http://msrit.edu/" target="_blank">
+          
+            <img src="{{ f.image.url }}" alt="" /></a><br>
+            <h3><a href="http://msrit.edu/" target="_blank" style="color: white;">
+              {{ f.name }}</a></h3>
+            <p>{{ f.get_position_display }}</p>
+            <p>
+              <b>Department of {{ f.dept }}</b>
+            </p>
+
+          </a>
          </div>
        </div> 
        {% endfor %}
      </div>
-   </div>
+
+    <!-- <div class="container">
+      <div class="row team">
+        {% for f in faculty %}
+        <div data-aos="fade-up" class="col-lg-4 col-md-6 col-sm-12 aos-init aos-animate">
+          <div class="image fit team">
+            <a href="http://msrit.edu/" target="_blank">
+            
+              <img src="{{ f.image.url }}" alt="" /></a><br>
+            <h3><a href="http://msrit.edu/" target="_blank" style="color: white;">
+                {{ f.name }}</a></h3>
+            <p>{{ f.get_position_display }}</p>
+            <p>
+              <b>Department of<br />{{ f.dept }}</b>
+            </p>
+            
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+   </div> -->
+   <!-- <div class="container">
+     <div class="row adjst">
+      {% for f in faculty %}
+       <div  data-aos="fade-up" class="col-lg-4 col-md-6 col-sm-12 aos-init aos-animate">
+        <div class="image fit">
+          <a href="http://msrit.edu/" target="_blank">
+        
+            <img src="{{ f.image.url }}" alt="" /></a><br>
+          <h3><a href="http://msrit.edu/" target="_blank" style="color: white;">
+              {{ f.name }}</a></h3>
+          <p>{{ f.get_position_display }}</p>
+          <p>
+            <b>Department of {{ f.dept }}</b>
+          </p>        
+          </a>
+        </div>
+       </div>
+      {% endfor %}
+     </div>
+   </div> -->
  </section>
 
  <section id="two" class="wrapper style3">
@@ -167,7 +216,7 @@
        <p>Check out our team brochure!</p>
        <pre>Click the link below</pre>
        <h2>
-         <a
+         <a target="_blank"
            href="https://drive.google.com/file/d/1_BO8raethvJ9qzwr5CjlkuQF2SrA2Qxw/view?usp=sharing"
            >Team Brochure</a>
        </h2>

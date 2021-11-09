@@ -4,8 +4,10 @@
 <section id="One" class="wrapper style3" >
     <div class="inner">
         <header class="align-center">
-            <p>Research is the base of development</p>
+            <!-- swapped h2 and p -->
             <h2>Research Papers</h2>
+            <hr>
+            <p>Research is the base of development</p>
         </header>
     </div>
 </section>
@@ -20,21 +22,41 @@
         </header>
             {% regroup papers by year as years %}
 
-            {% for year in years %}
+            <!-- {% for year in years %}
                 <h2>{{ year.grouper }}</h2><hr>
                 <ul>
                 {% for paper in year.list %}
                 <li class="research-li">
                     <h3>Title : {{ paper.title }}</h3> 
                     <h4 style="color: rgb(182, 182, 182);">Author : {{ paper.author.name }}</h4>
-                    <h4 style="color: rgb(182, 181, 182);"> Conference : {{ paper.conference }}</h4><br>
+                    <h4 style="color: rgb(182, 181, 182);"> Conference : {{ paper.conference }}</h4><br> -->
                     <!--<h3>Abstract:</h3>
                     <p>{{ paper.abstract }}</p>-->
-                    <h4><a href="{{ paper.abstract_pdf }}">Abstract document</a></h4>
+                    <!-- <h4><a href="{{ paper.abstract_pdf }}">Abstract document</a></h4>
                 </li><br>
                 {% endfor %}
                 </ul>
+            {% endfor %} -->
+
+            
+
+            {% for year in years %}
+            <h2>{{ year.grouper }}</h2>
+            <hr>
+                <ul class="research-cards">
+                    {% for paper in year.list %}
+                    <li class="research-li">
+                        <a target="_blank" href="{{ paper.abstract_pdf }}">
+                            <h3>Title : {{ paper.title }}</h3>
+                            <h4>Author : {{ paper.author.name }}</h4>
+                            <h4>Conference : {{ paper.conference }}</h4>
+                            <!-- <h4><a href="{{ paper.abstract_pdf }}">Abstract document</a></h4> -->
+                        </a>
+                    </li><br>            
+                    {% endfor %}
+                </ul>            
             {% endfor %}
+
     </div>
 </section>
 {% endblock content %}
